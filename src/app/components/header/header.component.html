@@ -1,7 +1,31 @@
-<section>
-  <div class="example-button-row">
-    <button mat-raised-button color="accent" routerLink="">Home</button>
-    <button mat-raised-button routerLink="courses">Courses</button>
-    <button mat-raised-button color="primary" routerLink="tests">Tests</button>
-  </div>
+<section class="container">
+  <nav class="navbar">
+    <div class="title" routerLink="">STUDY10</div>
+    <mat-list>
+      <mat-list-item color="accent" routerLink="">
+        <span class="navbar-link">Trang chủ</span></mat-list-item
+      >
+      <mat-list-item routerLink="courses">
+        <span class="navbar-link">Khoá học online</span>
+      </mat-list-item>
+      <mat-list-item color="primary" routerLink="tests">
+        <span class="navbar-link">Đề thi online</span>
+      </mat-list-item>
+      <mat-list-item color="primary" routerLink="blog">
+        <span class="navbar-link">Blog</span>
+      </mat-list-item>
+
+      <button mat-raised-button color="#35509a !important" routerLink="sign-in">
+        Đăng nhập
+      </button>
+    </mat-list>
+
+    <button
+      mat-icon-button
+      class="menu-btn"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </nav>
 </section>
