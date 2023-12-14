@@ -79,14 +79,34 @@ mat-list {
 }
 
 .menu-btn {
-  display: none;
+  display: none !important;
+}
+
+.mat-mdc-menu-item-text {
+  color: #71869d !important;
 }
 
 @media (max-width: 992px) {
   mat-list {
     display: none;
   }
+
   .menu-btn {
-    display: block;
+    display: block !important;
+  }
+
+  .navbar-link:hover {
+    box-shadow: none;
+    color: #71869d;
+  }
+
+  .sign-in-btn {
+    background-color: #35509a !important;
+    color: white;
+    border-radius: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    height: 20px !important;
+    font-size: 15px !important;
   }
 }

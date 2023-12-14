@@ -24,8 +24,27 @@
       mat-icon-button
       class="menu-btn"
       aria-label="Example icon-button with menu icon"
+      [matMenuTriggerFor]="menu"
     >
       <mat-icon>menu</mat-icon>
     </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span class="navbar-link" routerLink="">Trang chủ</span>
+      </button>
+      <button mat-menu-item>
+        <span class="navbar-link" routerLink="courses">Khoá học online</span>
+      </button>
+      <button mat-menu-item>
+        <span class="navbar-link" routerLink="tests">Đề thi online</span>
+      </button>
+      <button mat-menu-item>
+        <span class="navbar-link" routerLink="blog">Blog</span>
+      </button>
+      <button mat-menu-item routerLink="sign-in" class="sign-in-btn">
+        <span class="sign-in-btn">Đăng nhập</span>
+      </button>
+    </mat-menu>
   </nav>
 </section>
