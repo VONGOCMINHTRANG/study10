@@ -4,7 +4,18 @@
   position: relative;
 }
 
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.app-header {
+  height: 52px;
+  background-color: #f8f9fa;
+}
+
 .content-wrapper {
-  padding-top: 64px;
   background-color: #f8f9fa !important;
 }

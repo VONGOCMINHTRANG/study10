@@ -102,11 +102,13 @@ mat-list {
 
   .sign-in-btn {
     background-color: #35509a !important;
+    padding: 7px 40px;
     color: white;
-    border-radius: 18px;
+    border-radius: 16px;
     font-weight: 600;
-    margin-top: 10px;
-    height: 20px !important;
     font-size: 15px !important;
+  }
+  .mat-mdc-menu-item {
+    min-height: 37px !important;
   }
 }
