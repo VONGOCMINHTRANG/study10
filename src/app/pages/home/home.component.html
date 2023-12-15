@@ -1,8 +1,10 @@
 <div class="wrapper">
-  <app-header></app-header>
-  <div class="content-wrapper">
-    <router-outlet></router-outlet>
+  <div class="app-header">
+    <app-header (handleMenu)="addClassBlur($event)"></app-header>
+  </div>
 
+  <div #contentWrapper class="content-wrapper">
+    <router-outlet></router-outlet>
     <p>
       When deciding on the layout of a document, it is easier to imagine what it
       will look like when the document is completed by using text in a font that
@@ -39,26 +41,6 @@
       because of it. The rarely used source for ``lorem ipsum'' was created by
       Richard McClintock, a Latin literary scholar and head of the publishing
       department at Hampden – Sydney College in Virginia . It was found in the
-      classics using the word "consectetur" as a clue . [2] The original Latin
-      text is as follows: [32] Nemo enim ipsam voluptatem, quia voluptas sit,
-      aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos,
-      qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui do
-      lorem ipsum , quia dolor sit, amet, consectetur, adipisci v elit, sed quia
-      non numquam eius mod i tempor a incidunt, Ut enim ad minim a veniam , quis
-      nostru m exercitation em ullam co rporis suscipit laborios am, nisi ut
-      aliquid ex ea commodi consequat ur ? Voluptate velit esse , quam nihil
-      molestiae c onsequatur, vel illum , qui dolore m eu m fugiat , quo
-      voluptas nulla pariatur ? [33] At vero eos et accusamus et iusto odio
-      dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque
-      corrupti, quos dolores et quas molestias exceptur i sint, obcaecat i
-      cupiditat e non pro v ident , similique sunt in culpa , qui officia
-      deserunt mollit ia anim i, id est laborum et dolorum fuga. Et harum quidem
-      rerum facilis est et expedita distinctio. , omnis dolor repellendus.
-      Temporibus autem quibusdam et aut officiis debitis aut rerum
-      necessitatibus saepe eveniet, ut et voluptates repudiandae sint et
-      molestiae non recusandae. perferendis doloribus asperiores repellat. The
-      gist of this is as follows [4] . [32] But since I have to explain to you
-      how all this false idea of ​​de
     </p>
   </div>
 </div>

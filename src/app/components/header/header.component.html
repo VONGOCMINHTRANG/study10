@@ -1,4 +1,4 @@
-<section class="container">
+<section #container class="container">
   <nav class="navbar">
     <div class="title" routerLink="">STUDY10</div>
     <mat-list>
@@ -25,24 +25,26 @@
       class="menu-btn"
       aria-label="Example icon-button with menu icon"
       [matMenuTriggerFor]="menu"
+      (menuOpened)="menuOpened(true)"
+      (menuClosed)="menuClosed(false)"
     >
       <mat-icon>menu</mat-icon>
     </button>
 
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <span class="navbar-link" routerLink="">Trang chủ</span>
+      <button mat-menu-item routerLink="">
+        <span class="navbar-link">Trang chủ</span>
       </button>
-      <button mat-menu-item>
-        <span class="navbar-link" routerLink="courses">Khoá học online</span>
+      <button mat-menu-item routerLink="courses">
+        <span class="navbar-link">Khoá học online</span>
       </button>
-      <button mat-menu-item>
-        <span class="navbar-link" routerLink="tests">Đề thi online</span>
+      <button mat-menu-item routerLink="tests">
+        <span class="navbar-link">Đề thi online</span>
       </button>
-      <button mat-menu-item>
-        <span class="navbar-link" routerLink="blog">Blog</span>
+      <button mat-menu-item routerLink="blog">
+        <span class="navbar-link">Blog</span>
       </button>
-      <button mat-menu-item routerLink="sign-in" class="sign-in-btn">
+      <button mat-menu-item routerLink="sign-in">
         <span class="sign-in-btn">Đăng nhập</span>
       </button>
     </mat-menu>

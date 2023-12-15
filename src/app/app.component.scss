@@ -1,0 +1,14 @@
+.blur {
+  position: fixed;
+  top: 52px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  background-color: #6b7280 !important;
+  --bg-opacity: 0.5;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-duration: 300ms;
+}
