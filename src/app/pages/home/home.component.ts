@@ -9,7 +9,7 @@ export class HomeComponent {
   @ViewChild('contentWrapper') contentWrapper!: ElementRef;
 
   addClassBlur(isOpenMenu: boolean) {
-    if (isOpenMenu) {
+    if (isOpenMenu === true) {
       this.contentWrapper.nativeElement.classList.add('blur');
     } else {
       this.contentWrapper.nativeElement.classList.remove('blur');
