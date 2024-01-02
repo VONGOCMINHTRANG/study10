@@ -1,1 +1,144 @@
-<p>sign-up works!</p>
+<div class="sign-up-wrapper">
+  <form class="sign-up-form" [formGroup]="signUpForm">
+    <div class="header">
+      <img class="logo" src="assets\img\logo.jpg" alt="" />
+      <span class="title"
+        >Đăng ký ngay để bắt đầu trải nghiệm học tiếng Anh và luyện thi
+        TOEIC/IELTS hiệu quả cùng hàng trăm ngàn học viên mỗi ngày.</span
+      >
+    </div>
+
+    <mat-form-field>
+      <mat-label>Họ và tên</mat-label>
+      <input
+        matInput
+        placeholder="Nhập họ và tên"
+        formControlName="fullName"
+        name="fullName"
+      />
+      <mat-error *ngIf="signUpForm.controls['fullName'].hasError('required')">
+        Vui lòng nhập họ và tên
+      </mat-error>
+      <mat-error *ngIf="signUpForm.controls['fullName'].hasError('pattern')">
+        Vui lòng không nhập số, các ký tự đặc biệt
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        placeholder="Nhập Email"
+        formControlName="email"
+        name="email"
+      />
+      <mat-error *ngIf="signUpForm.controls['email'].hasError('required')">
+        Vui lòng nhập email
+      </mat-error>
+      <mat-error *ngIf="signUpForm.controls['email'].hasError('email')">
+        Vui lòng nhập đúng định dạng email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Mật khẩu</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        placeholder="Nhập mật khẩu"
+        formControlName="password"
+        name="password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+
+      <mat-error *ngIf="signUpForm.controls['password'].hasError('required')">
+        Vui lòng nhập mật khẩu
+      </mat-error>
+      <mat-error *ngIf="signUpForm.controls['password'].hasError('pattern')">
+        Mật khẩu ít nhất 8 kí tự, bao gồm 1 chữ hoa và 1 ký tự đặc biệt
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Số điện thoại</mat-label>
+      <input
+        matInput
+        placeholder="Nhập số điện thoại"
+        formControlName="phone"
+        name="phone"
+      />
+      <mat-error *ngIf="signUpForm.controls['phone'].hasError('required')">
+        Vui lòng nhập số điện thoại
+      </mat-error>
+      <mat-error *ngIf="signUpForm.controls['phone'].hasError('pattern')">
+        Vui lòng nhập đủ 10 số và bắt đầu bằng chữ số 0
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ngày sinh</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        placeholder="Nhập hoặc chọn ngày sinh"
+        formControlName="birthDay"
+        name="birthDay"
+      />
+      <mat-hint>DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="signUpForm.controls['birthDay'].hasError('required')">
+        Vui lòng chọn ngày sinh
+      </mat-error>
+      <mat-error *ngIf="signUpForm.controls['birthDay'].hasError('ageValid')">
+        Người đăng ký phải từ 3 tuổi trở lên
+      </mat-error>
+    </mat-form-field>
+
+    <mat-radio-group
+      aria-label="Select an option"
+      formControlName="gender"
+      name="gender"
+    >
+      <mat-radio-button value="1">Nam</mat-radio-button>
+      <mat-radio-button value="0">Nữ</mat-radio-button>
+      <mat-error
+        *ngIf="
+          isSubmitted && signUpForm.controls['gender'].hasError('required')
+        "
+      >
+        Vui lòng chọn giới tính
+      </mat-error>
+    </mat-radio-group>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="signUp()"
+      class="sign-up-btn"
+    >
+      Đăng ký
+    </button>
+
+    <div class="sign-up-social">
+      <i class="fab fa-google fa-2x" (click)="signUpGoogle()"></i>
+      <i class="fab fa-facebook fa-2x" (click)="signUpFacebook()"></i>
+    </div>
+
+    <span (click)="signIn()" class="sign-in-link" routerLink="sign-in">
+      Bạn đã có tài khoản? Đăng nhập ngay
+    </span>
+  </form>
+</div>

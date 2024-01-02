@@ -1,0 +1,74 @@
+.sign-up-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+form {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+}
+
+mat-label {
+  font-size: 14px;
+}
+
+.header {
+  font-size: 16px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.logo {
+  width: 70px;
+  height: 50px;
+  border-radius: 6px;
+}
+
+.sign-in-link {
+  color: #35509a;
+  font-size: 15px;
+  margin-top: 30px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.sign-in-link:hover {
+  color: black;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+button {
+  margin-top: 15px;
+}
+
+.sign-up-social {
+  margin-top: 15px;
+  display: flex;
+  gap: 7px;
+}
+.fa {
+  &-google {
+    color: #e73b2f;
+    cursor: pointer;
+  }
+  &-facebook {
+    color: #1877f2;
+    cursor: pointer;
+  }
+}
+
+.sign-up-btn {
+  background-color: #35509a !important;
+}

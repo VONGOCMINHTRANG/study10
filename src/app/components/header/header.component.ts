@@ -1,4 +1,3 @@
-import { EventManager } from '@angular/platform-browser';
 import {
   Component,
   Output,
