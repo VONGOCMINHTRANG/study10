@@ -6,6 +6,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   imports: [
@@ -16,6 +22,14 @@ import { MatMenuModule } from '@angular/material/menu';
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
   ],
   exports: [
     MatSlideToggleModule,
@@ -25,6 +39,13 @@ import { MatMenuModule } from '@angular/material/menu';
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatRadioModule,
+    MatIconModule,
   ],
+  providers: [MatDatepickerModule, MatNativeDateModule],
 })
 export class MaterialModule {}
