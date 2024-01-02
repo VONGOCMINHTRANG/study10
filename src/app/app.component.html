@@ -1,1 +1,11 @@
-<app-home></app-home>
+<main>
+  <!-- Navbar -->
+  <app-header (handleMenu)="addClassBlur($event)"></app-header>
+
+  <!-- Application content -->
+  <div #contentWrapper class="content-wrapper">
+    <app-home></app-home>
+  </div>
+
+  <!-- Footer -->
+</main>

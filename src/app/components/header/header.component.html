@@ -1,52 +1,59 @@
-<section #container class="container">
-  <nav class="navbar">
-    <div class="title" routerLink="">STUDY10</div>
-    <mat-list>
-      <mat-list-item color="accent" routerLink="">
-        <span class="navbar-link">Trang chủ</span></mat-list-item
+<div class="header-wrapper">
+  <section #container class="container">
+    <nav class="navbar">
+      <div class="title" routerLink="/">STUDY10</div>
+      <mat-list>
+        <mat-list-item color="accent" routerLink="/">
+          <span class="navbar-link">Trang chủ</span>
+        </mat-list-item>
+        <mat-list-item routerLink="courses">
+          <span class="navbar-link">Khoá học online</span>
+        </mat-list-item>
+        <mat-list-item color="primary" routerLink="tests">
+          <span class="navbar-link">Đề thi online</span>
+        </mat-list-item>
+        <mat-list-item color="primary" routerLink="blog">
+          <span class="navbar-link">Blog</span>
+        </mat-list-item>
+
+        <button
+          mat-raised-button
+          color="#35509a !important"
+          routerLink="sign-in"
+        >
+          Đăng nhập
+        </button>
+      </mat-list>
+
+      <button
+        mat-icon-button
+        class="menu-btn"
+        aria-label="Example icon-button with menu icon"
+        [matMenuTriggerFor]="menu"
+        (menuOpened)="menuOpened(true)"
+        (menuClosed)="menuClosed(false)"
+        #menuTrigger
       >
-      <mat-list-item routerLink="courses">
-        <span class="navbar-link">Khoá học online</span>
-      </mat-list-item>
-      <mat-list-item color="primary" routerLink="tests">
-        <span class="navbar-link">Đề thi online</span>
-      </mat-list-item>
-      <mat-list-item color="primary" routerLink="blog">
-        <span class="navbar-link">Blog</span>
-      </mat-list-item>
+        <mat-icon>menu</mat-icon>
+      </button>
 
-      <button mat-raised-button color="#35509a !important" routerLink="sign-in">
-        Đăng nhập
-      </button>
-    </mat-list>
-
-    <button
-      mat-icon-button
-      class="menu-btn"
-      aria-label="Example icon-button with menu icon"
-      [matMenuTriggerFor]="menu"
-      (menuOpened)="menuOpened(true)"
-      (menuClosed)="menuClosed(false)"
-    >
-      <mat-icon>menu</mat-icon>
-    </button>
-
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="">
-        <span class="navbar-link">Trang chủ</span>
-      </button>
-      <button mat-menu-item routerLink="courses">
-        <span class="navbar-link">Khoá học online</span>
-      </button>
-      <button mat-menu-item routerLink="tests">
-        <span class="navbar-link">Đề thi online</span>
-      </button>
-      <button mat-menu-item routerLink="blog">
-        <span class="navbar-link">Blog</span>
-      </button>
-      <button mat-menu-item routerLink="sign-in">
-        <span class="sign-in-btn">Đăng nhập</span>
-      </button>
-    </mat-menu>
-  </nav>
-</section>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="">
+          <span class="navbar-link">Trang chủ</span>
+        </button>
+        <button mat-menu-item routerLink="courses">
+          <span class="navbar-link">Khoá học online</span>
+        </button>
+        <button mat-menu-item routerLink="tests">
+          <span class="navbar-link">Đề thi online</span>
+        </button>
+        <button mat-menu-item routerLink="blog">
+          <span class="navbar-link">Blog</span>
+        </button>
+        <button mat-menu-item routerLink="sign-in">
+          <span class="sign-in-btn">Đăng nhập</span>
+        </button>
+      </mat-menu>
+    </nav>
+  </section>
+</div>
