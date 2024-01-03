@@ -1,5 +1,5 @@
 <div class="sign-in-wrapper">
-  <form class="sign-in-form" [formGroup]="signInForm" (ngSubmit)="signIn()">
+  <form class="sign-in-form" [formGroup]="signInForm">
     <div class="header">
       <img class="logo" src="assets\img\logo.jpg" alt="" />
       <span class="title">
@@ -32,7 +32,6 @@
         placeholder="Nhập mật khẩu"
         formControlName="password"
         name="password"
-        autocomplete="password"
       />
       <button
         mat-icon-button

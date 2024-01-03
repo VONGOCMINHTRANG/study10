@@ -43,13 +43,13 @@ export class SignUpComponent {
       return;
     }
 
-    const currentDate: string = formatDate(new Date(), 'yyyy/MM/dd', 'en-US')
+    const currentDate: string = formatDate(new Date(), 'dd/MM/yyyy', 'en-US')
       .split('/')
       .join('-');
 
     const DOB: string = formatDate(
       this.signUpForm.controls['birthDay'].value,
-      'yyyy/MM/dd',
+      'dd/MM/yyyy',
       'en-US'
     )
       .split('/')

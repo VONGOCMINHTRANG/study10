@@ -12,7 +12,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   imports: [
@@ -31,7 +30,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatAutocompleteModule,
   ],
   exports: [
     MatSlideToggleModule,
@@ -47,7 +45,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatDatepickerModule,
     MatRadioModule,
     MatIconModule,
-    MatAutocompleteModule,
   ],
   providers: [MatDatepickerModule, MatNativeDateModule],
 })

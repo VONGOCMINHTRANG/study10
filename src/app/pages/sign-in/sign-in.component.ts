@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,11 +12,7 @@ export class SignInComponent {
   hide: boolean = true;
   passwordPattern = '^(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z!@#$%^&*]{8,}$';
 
-  constructor(
-    private router: Router,
-    private fb: FormBuilder,
-    private authService: AuthService
-  ) {
+  constructor(private router: Router, private fb: FormBuilder) {
     this.signInForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       password: [
@@ -38,11 +33,6 @@ export class SignInComponent {
     };
 
     console.log(signInData);
-    console.log(this.authService.handleSignIn(signInData));
-
-    this.authService.handleSignIn(signInData).subscribe((response: any) => {
-      console.log('response >>>', response);
-    });
   }
 
   signUp() {
