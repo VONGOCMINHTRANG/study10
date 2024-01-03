@@ -73,6 +73,13 @@ button {
 
 .sign-up-btn {
   background-color: #35509a !important;
+  margin-top: 22px !important;
+}
+
+mat-hint {
+  font-style: italic;
+  font-size: 11px !important;
+  color: lightgrey;
 }
 
 @media (max-width: 599px) {

@@ -1,1 +1,193 @@
-<p>tests works!</p>
+<div class="test-wrapper">
+  <div class="content">
+    <div class="content-container">
+      <div class="content-header">
+        <h1 class="title">Thư viện đề thi</h1>
+
+        <ul class="test-list">
+          <li
+            class="test-list-item"
+            (click)="setTestActive('all-tests')"
+            [ngClass]="{ active: activeTestItem === 'all-tests' }"
+          >
+            Tất cả
+          </li>
+          <li
+            class="test-list-item"
+            (click)="setTestActive('ielts-academic')"
+            [ngClass]="{ active: activeTestItem === 'ielts-academic' }"
+          >
+            IELTS Academic
+          </li>
+          <li
+            class="test-list-item"
+            (click)="setTestActive('ielts-general')"
+            [ngClass]="{ active: activeTestItem === 'ielts-general' }"
+          >
+            IELTS General
+          </li>
+          <li
+            class="test-list-item"
+            (click)="setTestActive('toeic')"
+            [ngClass]="{ active: activeTestItem === 'toeic' }"
+          >
+            TOEIC
+          </li>
+          <li
+            class="test-list-item"
+            (click)="setTestActive('toefl-ibt')"
+            [ngClass]="{ active: activeTestItem === 'toefl-ibt' }"
+          >
+            TOEFL iBT
+          </li>
+          <li
+            class="test-list-item"
+            (click)="setTestActive('tieng-anh-thptqg')"
+            [ngClass]="{ active: activeTestItem === 'tieng-anh-thptqg' }"
+          >
+            Tiếng Anh THPTQG
+          </li>
+          <li
+            class="test-list-item"
+            (click)="setTestActive('new-sat')"
+            [ngClass]="{ active: activeTestItem === 'new-sat' }"
+          >
+            NEW SAT
+          </li>
+        </ul>
+
+        <ul class="test-year">
+          <li
+            class="test-year-item"
+            (click)="setYearActive(2023)"
+            [ngClass]="{ active: activeYearItem === 2023 }"
+          >
+            2023
+          </li>
+          <li
+            class="test-year-item"
+            (click)="setYearActive(2022)"
+            [ngClass]="{ active: activeYearItem === 2022 }"
+          >
+            2022
+          </li>
+          <li
+            class="test-year-item"
+            (click)="setYearActive(2021)"
+            [ngClass]="{ active: activeYearItem === 2021 }"
+          >
+            2021
+          </li>
+          <li
+            class="test-year-item"
+            (click)="setYearActive(2020)"
+            [ngClass]="{ active: activeYearItem === 2020 }"
+          >
+            2020
+          </li>
+          <li
+            class="test-year-item"
+            (click)="setYearActive(2019)"
+            [ngClass]="{ active: activeYearItem === 2019 }"
+          >
+            2019
+          </li>
+          <li
+            class="test-year-item"
+            (click)="setYearActive(2018)"
+            [ngClass]="{ active: activeYearItem === 2018 }"
+          >
+            2018
+          </li>
+        </ul>
+
+        <form>
+          <div class="custom-relative">
+            <input
+              type="text"
+              id="default-search"
+              class="custom-input"
+              placeholder="Nhập từ khóa bạn muốn tìm kiếm: tên đề thi, dạng câu hỏi, tên sách ..."
+              autocomplete="off"
+            />
+            <button type="submit" class="custom-icon-button">
+              <mat-icon>search</mat-icon>
+            </button>
+          </div>
+
+          <button mat-raised-button class="custom-button">Tìm kiếm</button>
+        </form>
+
+        <br />
+
+        <ul class="nav-tabs">
+          <li
+            (click)="setNavActive('all-tests')"
+            [ngClass]="{ active: activeNavItem === 'all-tests' }"
+            class="nav-item"
+          >
+            Tất cả
+          </li>
+          <li
+            (click)="setNavActive('mini-test')"
+            [ngClass]="{ active: activeNavItem === 'mini-test' }"
+            class="nav-item"
+          >
+            Đề rút gọn
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-wrapper">
+      <p>
+        What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
+        and typesetting industry. Lorem Ipsum has been the industry's standard
+        dummy text ever since the 1500s, when an unknown printer took a galley
+        of type and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with
+        the release of Letraset sheets containing Lorem Ipsum passages, and more
+        recently with desktop publishing software like Aldus PageMaker including
+        versions of Lorem Ipsum. Why do we use it? It is a long established fact
+        that a reader will be distracted by the readable content of a page when
+        looking at its layout. The point of using Lorem Ipsum is that it has a
+        more-or-less normal distribution of letters, as opposed to using
+        'Content here, content here', making it look like readable English. Many
+        desktop publishing packages and web page editors now use Lorem Ipsum as
+        their default model text, and a search for 'lorem ipsum' will uncover
+        many web sites still in their infancy. Various versions have evolved
+        over the years, sometimes by accident, sometimes on purpose (injected
+        humour and the like). Where does it come from? Contrary to popular
+        belief, Lorem Ipsum is not simply random text. It has roots in a piece
+        of classical Latin literature from 45 BC, making it over 2000 years old.
+        Richard McClintock, a Latin professor at Hampden-Sydney College in
+        Virginia, looked up one of the more obscure Latin words, consectetur,
+        from a Lorem Ipsum passage, and going through the cites of the word in
+        classical literature, discovered the undoubtable source. Lorem Ipsum
+        comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+        Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+        This book is a treatise on the theory of ethics, very popular during the
+        Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+        amet..", comes from a line in section 1.10.32. The standard chunk of
+        Lorem Ipsum used since the 1500s is reproduced below for those
+        interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
+        Malorum" by Cicero are also reproduced in their exact original form,
+        accompanied by English versions from the 1914 translation by H. Rackham.
+        Where can I get some? There are many variations of passages of Lorem
+        Ipsum available, but the majority have suffered alteration in some form,
+        by injected humour, or randomised words which don't look even slightly
+        believable. If you are going to use a passage of Lorem Ipsum, you need
+        to be sure there isn't anything embarrassing hidden in the middle of
+        text. All the Lorem Ipsum generators on the Internet tend to repeat
+        predefined chunks as necessary, making this the first true generator on
+        the Internet. It uses a dictionary of over 200 Latin words, combined
+        with a handful of model sentence structures, to generate Lorem Ipsum
+        which looks reasonable. The generated Lorem Ipsum is therefore always
+        free from repetition, injected humour, or non-characteristic words etc.
+      </p>
+    </div>
+  </div>
+</div>
