@@ -1,0 +1,44 @@
+.dialog {
+  &-wrapper {
+    max-width: 600px !important;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+  }
+
+  &-content {
+    font-style: italic !important;
+    color: rgb(186, 184, 184);
+    font-weight: 500;
+    padding: 10px 34px 10px 34px !important;
+  }
+}
+
+h1 {
+  padding: 0 24px 0 5px !important;
+  color: var(--title-color) !important;
+}
+
+.mat {
+  &-dialog {
+    max-width: 350px !important;
+  }
+
+  &-icon {
+    color: var(--icon-color) !important;
+    height: 45px !important;
+    min-width: 45px !important;
+    flex: 1;
+  }
+}
+
+.material-icons {
+  font-size: 45px !important;
+}

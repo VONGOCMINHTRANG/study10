@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../components/dialog/dialog.component';
+import { IconDialog } from '../../interfaces';
 
 @Component({
   selector: 'app-sign-in',
@@ -16,7 +19,8 @@ export class SignInComponent {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialog: MatDialog
   ) {
     this.signInForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
@@ -37,11 +41,30 @@ export class SignInComponent {
       password: this.signInForm.controls['password'].value,
     };
 
-    console.log(signInData);
-    console.log(this.authService.handleSignIn(signInData));
+    this.authService.handleSignIn(signInData).subscribe({
+      next: (response: any) => {
+        const data = response.data;
+        const accessToken = data.accessToken;
+        localStorage.setItem('user', JSON.stringify(data));
+        localStorage.setItem('accessToken', JSON.stringify(accessToken));
 
-    this.authService.handleSignIn(signInData).subscribe((response: any) => {
-      console.log('response >>>', response);
+        this.dialog.open(DialogComponent, {
+          data: {
+            icon: IconDialog.SUCCESS,
+            title: 'Đăng nhập thành công',
+            message: 'Xin chào bạn!',
+          },
+        });
+      },
+      error: () => {
+        this.dialog.open(DialogComponent, {
+          data: {
+            icon: IconDialog.ERROR,
+            title: 'Vui lòng kiểm tra lại',
+            message: 'Email hoặc mật khẩu không chính xác!',
+          },
+        });
+      },
     });
   }
 

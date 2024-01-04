@@ -8,4 +8,10 @@ interface Information {
   createdAt?: any;
 }
 
-export { Information };
+enum IconDialog {
+  ERROR = 'error_outline',
+  WARNING = 'warning',
+  SUCCESS = 'check_circle_outline',
+}
+
+export { Information, IconDialog };
