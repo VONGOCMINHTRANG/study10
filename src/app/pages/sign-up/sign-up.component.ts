@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { ageValidator } from './sign-up.validator';
 import { formatDate } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../components/dialog/dialog.component';
+import { IconDialog } from '../../interfaces';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,7 +24,8 @@ export class SignUpComponent {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialog: MatDialog
   ) {
     this.signUpForm = this.fb.group({
       fullName: [
@@ -64,12 +68,33 @@ export class SignUpComponent {
       birthDate: DOB,
       gender: Number(this.signUpForm.controls['gender'].value),
     };
-    console.log(signUpData);
 
     this.authService.handleSignUp(signUpData).subscribe({
-      next: (response: any) => console.log('Sign up >>>', response),
-      error: (response: any) =>
-        console.log('Sign in err >>>', response.error.message),
+      next: (response: any) => {
+        const data = response.data;
+        const accessToken = data.accessToken;
+        localStorage.setItem('user', JSON.stringify(data));
+        localStorage.setItem('accessToken', JSON.stringify(accessToken));
+
+        this.dialog.open(DialogComponent, {
+          data: {
+            icon: IconDialog.SUCCESS,
+            title: 'Đăng ký thành công',
+            message: 'Xin chào bạn!',
+          },
+        });
+
+        this.router.navigateByUrl('/');
+      },
+      error: () => {
+        this.dialog.open(DialogComponent, {
+          data: {
+            icon: IconDialog.ERROR,
+            title: 'Email đã được đăng ký',
+            message: 'Xin vui lòng chọn email khác!',
+          },
+        });
+      },
     });
   }
 

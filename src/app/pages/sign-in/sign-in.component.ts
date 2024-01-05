@@ -55,6 +55,8 @@ export class SignInComponent {
             message: 'Xin chào bạn!',
           },
         });
+
+        this.router.navigateByUrl('/');
       },
       error: () => {
         this.dialog.open(DialogComponent, {

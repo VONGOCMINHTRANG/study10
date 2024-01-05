@@ -7,12 +7,13 @@ import { TestsComponent } from './pages/tests/tests.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AuthGuard } from '../guards/auth.guards';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'sign-in', component: SignInComponent },
-  { path: 'sign-up', component: SignUpComponent },
+  { path: 'sign-in', component: SignInComponent, canActivate: [AuthGuard] },
+  { path: 'sign-up', component: SignUpComponent, canActivate: [AuthGuard] },
   { path: 'tests', component: TestsComponent },
   { path: 'courses', component: CoursesComponent },
   { path: 'blog', component: BlogComponent },
