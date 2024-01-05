@@ -10,7 +10,9 @@ import { Observable, from, switchMap } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthInterceptor implements HttpInterceptor {
   intercept(
     request: HttpRequest<any>,
@@ -30,7 +32,6 @@ export class AuthInterceptor implements HttpInterceptor {
       if (Number(decodedToken.exp) < Number(date.getTime() / 1000)) {
         return this.refreshAccessToken(request, next);
       }
-
       return next.handle(request);
     }
 

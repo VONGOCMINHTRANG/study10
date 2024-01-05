@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Information } from '../interfaces';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +33,17 @@ export class AuthService {
       user,
       options
     );
+  }
+
+  isLoggedIn(): Observable<boolean> {
+    if (typeof window !== 'undefined') {
+      const accessToken = localStorage.getItem('accessToken');
+      if (accessToken && accessToken !== '') {
+        return of(true);
+      }
+      return of(false);
+    }
+    return of(true);
   }
 
   handleSignIn(user: Information) {
