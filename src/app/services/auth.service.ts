@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Information } from '../interfaces';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -35,15 +35,15 @@ export class AuthService {
     );
   }
 
-  isLoggedIn(): Observable<boolean> {
+  isLoggedIn(): boolean {
     if (typeof window !== 'undefined') {
       const accessToken = localStorage.getItem('accessToken');
-      if (accessToken && accessToken !== '') {
-        return of(true);
+      if (accessToken) {
+        return true;
       }
-      return of(false);
+      return false;
     }
-    return of(true);
+    return true;
   }
 
   handleSignIn(user: Information) {
@@ -56,5 +56,9 @@ export class AuthService {
 
   handleRefreshAccessToken(): Observable<any> {
     return this.http.get<any>('http://localhost:8081/api/auth/refresh_token');
+  }
+
+  handleLogout(): Observable<any> {
+    return this.http.get<any>('http://localhost:8081/api/auth/logout');
   }
 }
