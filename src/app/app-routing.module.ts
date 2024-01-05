@@ -7,7 +7,7 @@ import { TestsComponent } from './pages/tests/tests.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AuthGuard } from '../guards/auth.guards';
+import { AuthGuard } from './guards/auth.guards';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

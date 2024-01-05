@@ -1,7 +1,7 @@
 import { Observable, map } from 'rxjs';
 import { inject } from '@angular/core';
 import { CanActivateFn, Router, UrlTree } from '@angular/router';
-import { AuthService } from '../app/services/auth.service';
+import { AuthService } from '../services/auth.service';
 
 export const AuthGuard: CanActivateFn = ():
   | Observable<boolean | UrlTree>
