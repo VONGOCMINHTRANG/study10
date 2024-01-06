@@ -20,9 +20,18 @@
           mat-raised-button
           color="#35509a !important"
           routerLink="sign-in"
+          *ngIf="!this.authService.isLoggedIn(); else user"
         >
           Đăng nhập
         </button>
+
+        <ng-template #user>
+          <div class="user-wrapper">
+            <img class="user-img" src="../../../assets/img/avatar.jpg" alt="" />
+
+            <mat-icon class="icon-arrow">keyboard_arrow_down</mat-icon>
+          </div>
+        </ng-template>
       </mat-list>
 
       <button
@@ -50,9 +59,25 @@
         <button mat-menu-item routerLink="blog">
           <span class="navbar-link">Blog</span>
         </button>
-        <button mat-menu-item routerLink="sign-in">
-          <span class="sign-in-btn">Đăng nhập</span>
+        <button
+          mat-menu-item
+          [routerLink]="['my-account', 'information']"
+          *ngIf="this.authService.isLoggedIn()"
+        >
+          <span class="navbar-link">Trang cá nhân</span>
         </button>
+
+        <div
+          routerLink="sign-in"
+          *ngIf="!this.authService.isLoggedIn(); else logoutButton"
+          class="btn-sign-in"
+        >
+          Đăng nhập
+        </div>
+
+        <ng-template #logoutButton>
+          <div (click)="signOut()" class="btn-sign-out">Đăng xuất</div>
+        </ng-template>
       </mat-menu>
     </nav>
   </section>

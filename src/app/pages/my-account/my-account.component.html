@@ -1,0 +1,5 @@
+<div class="my-account-wrapper" *ngIf="this.authService.isLoggedIn()">
+  <div class="my-account-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
