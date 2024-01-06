@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tests',
@@ -10,15 +11,17 @@ export class TestsComponent {
   activeNavItem: string = 'all-tests';
   activeYearItem: number = 2023;
 
-  setTestActive(item: string) {
+  constructor(private router: Router) {}
+  handleTestActive(item: string) {
     this.activeTestItem = item;
   }
 
-  setNavActive(item: string) {
+  handleNavActive(item: string, link?: string) {
     this.activeNavItem = item;
+    this.router.navigateByUrl(`/tests/${link}`);
   }
 
-  setYearActive(item: number) {
+  handleYearActive(item: number) {
     this.activeYearItem = item;
   }
 }

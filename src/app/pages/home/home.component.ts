@@ -10,7 +10,7 @@ import { tap } from 'rxjs';
 export class HomeComponent {
   @ViewChild('contentWrapper') contentWrapper!: ElementRef;
 
-  constructor(private authService: AuthService) {}
+  constructor(public authService: AuthService) {}
 
   addClassBlur(isOpenMenu: boolean) {
     if (isOpenMenu === true) {
