@@ -24,6 +24,7 @@ import { MiniComponent } from './pages/tests/mini/mini.component';
 import { TestsComponent } from './pages/tests/tests.component';
 import { AllComponent } from './pages/tests/all/all.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MyAccountComponent } from './pages/my-account/my-account.component';
     MiniComponent,
     AllComponent,
     MyAccountComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
