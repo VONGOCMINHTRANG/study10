@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ageValidator } from './sign-up.validator';
@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { IconDialog } from '../../interfaces';
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-sign-up',
@@ -20,12 +21,22 @@ export class SignUpComponent {
   fullNamePattern = '^[^0-9!@#$%^&*()+=\\-\\[\\]\\\\\';,./{}|":<>?~_]*$';
   passwordPattern = '^(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z!@#$%^&*]{8,}$';
   phonePattern = '0[0-9]{9}';
+  @ViewChild('fullNameField') fullNameField: MatInput;
+
+  ngAfterViewInit(): void {
+    this.fullNameField.focus();
+  }
+
+  ngAfterViewChecked(): void {
+    this.changeDetectorRef.detectChanges();
+  }
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private readonly changeDetectorRef: ChangeDetectorRef
   ) {
     this.signUpForm = this.fb.group({
       fullName: [
@@ -102,11 +113,15 @@ export class SignUpComponent {
     this.router.navigateByUrl('/sign-in');
   }
 
-  signUpGoogle() {
-    console.log('sign up with google');
+  signInGoogle() {
+    console.log('sign in with google');
   }
 
-  signUpFacebook() {
-    console.log('sign up facebook');
+  signInFacebook() {
+    console.log('sign in facebook');
+  }
+
+  signInLinkedin() {
+    console.log('sign in linkedin');
   }
 }

@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { IconDialog } from '../../interfaces';
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,12 +21,22 @@ export class SignInComponent {
   signInForm: FormGroup;
   hide: boolean = true;
   passwordPattern = '^(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z!@#$%^&*]{8,}$';
+  @ViewChild('emailField') emailField: MatInput;
+
+  ngAfterViewInit(): void {
+    this.emailField.focus();
+  }
+
+  ngAfterViewChecked(): void {
+    this.changeDetectorRef.detectChanges();
+  }
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private readonly changeDetectorRef: ChangeDetectorRef
   ) {
     this.signInForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
@@ -80,5 +96,9 @@ export class SignInComponent {
 
   signInFacebook() {
     console.log('sign in facebook');
+  }
+
+  signInLinkedin() {
+    console.log('sign in linkedin');
   }
 }

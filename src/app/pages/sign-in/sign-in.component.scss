@@ -1,9 +1,35 @@
-.sign-in-wrapper {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  align-items: center;
-  margin-top: 3rem;
+.sign {
+  &-in {
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    &-btn {
+      background-color: #35509a !important;
+      margin-top: 22px !important;
+    }
+  }
+
+  &-up {
+    &-link {
+      color: #35509a;
+      font-size: 15px;
+      margin-top: 30px;
+      cursor: pointer;
+      width: fit-content;
+
+      &:hover {
+        color: black;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+      }
+    }
+  }
 }
 
 form {
@@ -19,8 +45,16 @@ form {
   border-radius: 12px;
 }
 
-mat-label {
-  font-size: 14px;
+mat {
+  &-label {
+    font-size: 1rem;
+  }
+
+  &-hint {
+    font-style: italic;
+    font-size: 14px !important;
+    color: lightgrey;
+  }
 }
 
 .header {
@@ -37,47 +71,8 @@ mat-label {
   border-radius: 6px;
 }
 
-.sign-up-link {
-  color: #35509a;
-  font-size: 15px;
-  margin-top: 30px;
-  cursor: pointer;
-  width: fit-content;
-}
-
-.sign-up-link:hover {
-  color: black;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
 button {
   margin-top: 15px;
-}
-
-.sign-in-social {
-  margin-top: 15px;
-  display: flex;
-  gap: 7px;
-}
-
-.fa {
-  &-google {
-    color: #e73b2f;
-    cursor: pointer;
-    font-size: 2.5rem;
-  }
-  &-facebook {
-    color: #1877f2;
-    cursor: pointer;
-    font-size: 2.5rem;
-  }
-}
-
-.sign-in-btn {
-  background-color: #35509a !important;
-  margin-top: 22px !important;
 }
 
 @media (max-width: 599px) {

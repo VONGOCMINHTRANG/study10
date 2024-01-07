@@ -1,0 +1,19 @@
+<form class="search-form" [formGroup]="searchForm" (ngSubmit)="search()">
+  <div class="custom-relative">
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="Nhập từ khóa bạn muốn tìm kiếm: tên đề thi, dạng câu hỏi, tên sách ..."
+      autocomplete="off"
+      formControlName="search"
+      name="search"
+    />
+    <button type="submit" class="custom-icon-button">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+
+  <button mat-raised-button class="custom-button" (click)="search()">
+    Tìm kiếm
+  </button>
+</form>

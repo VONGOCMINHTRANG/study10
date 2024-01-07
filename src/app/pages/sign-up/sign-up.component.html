@@ -15,6 +15,7 @@
         placeholder="Nhập họ và tên"
         formControlName="fullName"
         name="fullName"
+        #fullNameField="matInput"
       />
       <mat-error *ngIf="signUpForm.controls['fullName'].hasError('required')">
         Vui lòng nhập họ và tên
@@ -133,10 +134,7 @@
       Đăng ký
     </button>
 
-    <div class="sign-up-social">
-      <i class="fab fa-google" (click)="signUpGoogle()"></i>
-      <i class="fab fa-facebook" (click)="signUpFacebook()"></i>
-    </div>
+    <app-social-link></app-social-link>
 
     <span (click)="signIn()" class="sign-in-link" routerLink="sign-in">
       Bạn đã có tài khoản? Đăng nhập ngay!

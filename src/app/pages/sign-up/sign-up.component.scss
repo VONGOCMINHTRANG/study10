@@ -1,9 +1,41 @@
-.sign-up-wrapper {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  align-items: center;
-  margin-top: 3rem;
+.sign {
+  &-in {
+    &-link {
+      color: #35509a;
+      font-size: 15px;
+      margin-top: 30px;
+      cursor: pointer;
+      width: fit-content;
+
+      &:hover {
+        color: black;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+      }
+    }
+  }
+
+  &-up {
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    &-social {
+      margin-top: 15px;
+      display: flex;
+      gap: 7px;
+    }
+
+    &-btn {
+      background-color: #35509a !important;
+      margin-top: 22px !important;
+    }
+  }
 }
 
 form {
@@ -19,8 +51,16 @@ form {
   border-radius: 12px;
 }
 
-mat-label {
-  font-size: 14px;
+mat {
+  &-label {
+    font-size: 1rem;
+  }
+
+  &-hint {
+    font-style: italic;
+    font-size: 14px !important;
+    color: lightgrey;
+  }
 }
 
 .header {
@@ -37,53 +77,8 @@ mat-label {
   border-radius: 6px;
 }
 
-.sign-in-link {
-  color: #35509a;
-  font-size: 15px;
-  margin-top: 30px;
-  cursor: pointer;
-  width: fit-content;
-}
-
-.sign-in-link:hover {
-  color: black;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
 button {
   margin-top: 15px;
-}
-
-.sign-up-social {
-  margin-top: 15px;
-  display: flex;
-  gap: 7px;
-}
-
-.fa {
-  &-google {
-    color: #e73b2f;
-    cursor: pointer;
-    font-size: 2.5rem;
-  }
-  &-facebook {
-    color: #1877f2;
-    cursor: pointer;
-    font-size: 2.5rem;
-  }
-}
-
-.sign-up-btn {
-  background-color: #35509a !important;
-  margin-top: 22px !important;
-}
-
-mat-hint {
-  font-style: italic;
-  font-size: 11px !important;
-  color: lightgrey;
 }
 
 @media (max-width: 599px) {
