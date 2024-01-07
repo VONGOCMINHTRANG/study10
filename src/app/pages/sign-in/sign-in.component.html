@@ -15,6 +15,7 @@
         placeholder="Nhập Email"
         formControlName="email"
         name="email"
+        #emailField="matInput"
       />
       <mat-error *ngIf="signInForm.controls['email'].hasError('required')">
         Vui lòng nhập email
@@ -62,10 +63,7 @@
       Đăng nhập
     </button>
 
-    <div class="sign-in-social">
-      <i class="fab fa-google" (click)="signInGoogle()"></i>
-      <i class="fab fa-facebook" (click)="signInFacebook()"></i>
-    </div>
+    <app-social-link></app-social-link>
 
     <span (click)="signUp()" class="sign-up-link" routerLink="sign-up">
       Bạn chưa là một thành viên? Đăng ký ngay!

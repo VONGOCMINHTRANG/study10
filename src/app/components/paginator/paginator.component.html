@@ -1,0 +1,52 @@
+<div class="pagination">
+  <button class="pagination-btn">
+    <mat-icon class="pagination-arrow-icon">keyboard_arrow_left</mat-icon>
+  </button>
+  <ul>
+    <li
+      value="1"
+      (click)="setActivePage(1)"
+      [ngClass]="{ active: activePage === 1 }"
+    >
+      1
+    </li>
+    <li
+      value="2"
+      (click)="setActivePage(2)"
+      [ngClass]="{ active: activePage === 2 }"
+    >
+      2
+    </li>
+    <li
+      value="3"
+      (click)="setActivePage(3)"
+      [ngClass]="{ active: activePage === 3 }"
+    >
+      3
+    </li>
+    <li
+      value="4"
+      (click)="setActivePage(4)"
+      [ngClass]="{ active: activePage === 4 }"
+    >
+      4
+    </li>
+    <li
+      value="5"
+      (click)="setActivePage(5)"
+      [ngClass]="{ active: activePage === 5 }"
+    >
+      5
+    </li>
+    <li
+      value="6"
+      (click)="setActivePage(6)"
+      [ngClass]="{ active: activePage === 6 }"
+    >
+      6
+    </li>
+  </ul>
+  <button class="pagination-btn">
+    <mat-icon class="pagination-arrow-icon"> keyboard_arrow_right </mat-icon>
+  </button>
+</div>

@@ -25,6 +25,9 @@ import { TestsComponent } from './pages/tests/tests.component';
 import { AllComponent } from './pages/tests/all/all.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
+import { SearchComponent } from './components/search/search.component';
+import { SocialLinkComponent } from './components/social-link/social-link.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     AllComponent,
     MyAccountComponent,
     SidebarComponent,
+    PaginatorComponent,
+    SearchComponent,
+    SocialLinkComponent,
   ],
   imports: [
     BrowserModule,
