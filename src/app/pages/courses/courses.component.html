@@ -1,1 +1,55 @@
-<p>courses works!</p>
+<div class="course-wrapper">
+  <div class="course-content">
+    <div class="course-content-container">
+      <div class="course-content-header">
+        <h1 class="title">Khóa học online</h1>
+
+        <ul class="course-list">
+          <li
+            class="course-list-item"
+            (click)="handleCourseActive('all-courses', '/')"
+            [ngClass]="{ active: activeCourseItem === 'all-courses' }"
+          >
+            Tất cả
+          </li>
+          <li
+            class="course-list-item"
+            (click)="handleCourseActive('ielts', 'ielts')"
+            [ngClass]="{ active: activeCourseItem === 'ielts' }"
+          >
+            IELTS
+          </li>
+          <li
+            class="course-list-item"
+            (click)="handleCourseActive('toeic', 'toeic')"
+            [ngClass]="{ active: activeCourseItem === 'toeic' }"
+          >
+            TOEIC
+          </li>
+          <li
+            class="course-list-item"
+            (click)="handleCourseActive('basic-english', 'basic-english')"
+            [ngClass]="{ active: activeCourseItem === 'basic-english' }"
+          >
+            Tiếng Anh cơ bản
+          </li>
+        </ul>
+
+        <app-search></app-search>
+
+        <div class="course-introduction">
+          Những khoá học tiếng Anh online chất lượng cao của STUDY10 được thiết
+          kế theo chương trình tiếng Anh chuẩn CEFR (A1-C2) của đại học
+          Cambridge và Oxford (Anh) với hệ thống bài giảng, bài tập phong phú đa
+          dạng.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

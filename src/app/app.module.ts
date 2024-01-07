@@ -22,12 +22,16 @@ import { InformationComponent } from './pages/my-account/information/information
 import { ResultTestsComponent } from './pages/my-account/result-tests/result-tests.component';
 import { MiniComponent } from './pages/tests/mini/mini.component';
 import { TestsComponent } from './pages/tests/tests.component';
-import { AllComponent } from './pages/tests/all/all.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { SearchComponent } from './components/search/search.component';
 import { SocialLinkComponent } from './components/social-link/social-link.component';
+import { BasicEnglishComponent } from './pages/courses/basic-english/basic-english.component';
+import { IeltsComponent } from './pages/courses/ielts/ielts.component';
+import { ToeicComponent } from './pages/courses/toeic/toeic.component';
+import { AllTestComponent } from './pages/tests/all/all.component';
+import { AllCoursesComponent } from './pages/courses/all/all.component';
 
 @NgModule({
   declarations: [
@@ -44,12 +48,16 @@ import { SocialLinkComponent } from './components/social-link/social-link.compon
     ResultTestsComponent,
     TestsComponent,
     MiniComponent,
-    AllComponent,
+    AllTestComponent,
     MyAccountComponent,
     SidebarComponent,
     PaginatorComponent,
     SearchComponent,
     SocialLinkComponent,
+    BasicEnglishComponent,
+    IeltsComponent,
+    ToeicComponent,
+    AllCoursesComponent,
   ],
   imports: [
     BrowserModule,

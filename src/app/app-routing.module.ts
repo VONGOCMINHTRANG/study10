@@ -12,9 +12,13 @@ import { InformationComponent } from './pages/my-account/information/information
 import { UserCoursesComponent } from './pages/my-account/courses/courses.component';
 import { ResultTestsComponent } from './pages/my-account/result-tests/result-tests.component';
 import { MiniComponent } from './pages/tests/mini/mini.component';
-import { AllComponent } from './pages/tests/all/all.component';
+import { AllTestComponent } from './pages/tests/all/all.component';
 import { UserGuard } from './guards/user.guards';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
+import { BasicEnglishComponent } from './pages/courses/basic-english/basic-english.component';
+import { IeltsComponent } from './pages/courses/ielts/ielts.component';
+import { ToeicComponent } from './pages/courses/toeic/toeic.component';
+import { AllCoursesComponent } from './pages/courses/all/all.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,11 +29,23 @@ const routes: Routes = [
     path: 'tests',
     component: TestsComponent,
     children: [
-      { path: '', component: AllComponent },
+      { path: '', component: AllTestComponent },
       { path: 'mini', component: MiniComponent },
     ],
   },
-  { path: 'courses', component: CoursesComponent },
+  {
+    path: 'courses',
+    component: CoursesComponent,
+    children: [
+      { path: '', component: AllCoursesComponent },
+      { path: 'ielts', component: IeltsComponent },
+      { path: 'toeic', component: ToeicComponent },
+      {
+        path: 'basic-english',
+        component: BasicEnglishComponent,
+      },
+    ],
+  },
   { path: 'blog', component: BlogComponent },
   {
     path: 'my-account',
