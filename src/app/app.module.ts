@@ -32,6 +32,7 @@ import { IeltsComponent } from './pages/courses/ielts/ielts.component';
 import { ToeicComponent } from './pages/courses/toeic/toeic.component';
 import { AllTestComponent } from './pages/tests/all/all.component';
 import { AllCoursesComponent } from './pages/courses/all/all.component';
+import { AllHomeContentComponent } from './pages/home/all/all.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AllCoursesComponent } from './pages/courses/all/all.component';
     IeltsComponent,
     ToeicComponent,
     AllCoursesComponent,
+    AllHomeContentComponent,
   ],
   imports: [
     BrowserModule,

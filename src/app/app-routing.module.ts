@@ -6,7 +6,6 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { TestsComponent } from './pages/tests/tests.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './guards/auth.guards';
 import { InformationComponent } from './pages/my-account/information/information.component';
 import { UserCoursesComponent } from './pages/my-account/courses/courses.component';
@@ -19,10 +18,11 @@ import { BasicEnglishComponent } from './pages/courses/basic-english/basic-engli
 import { IeltsComponent } from './pages/courses/ielts/ielts.component';
 import { ToeicComponent } from './pages/courses/toeic/toeic.component';
 import { AllCoursesComponent } from './pages/courses/all/all.component';
+import { AllHomeContentComponent } from './pages/home/all/all.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: AllHomeContentComponent },
   { path: 'sign-in', component: SignInComponent, canActivate: [AuthGuard] },
   { path: 'sign-up', component: SignUpComponent, canActivate: [AuthGuard] },
   {

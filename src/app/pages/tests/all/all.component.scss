@@ -10,6 +10,7 @@
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 30px;
       width: 100%;
+      margin-bottom: 5rem;
     }
 
     &-content {
@@ -135,7 +136,7 @@ mat {
   }
 }
 
-@media (min-width: 960px) and (max-width: 1279px) {
+@media (min-width: 960px) and (max-width: 1269px) {
   .test {
     &-item {
       &-container {
