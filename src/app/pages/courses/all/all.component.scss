@@ -1,3 +1,7 @@
+h1 {
+  font-weight: bolder !important;
+}
+
 .course {
   &-item {
     &-container {
@@ -6,10 +10,15 @@
     }
 
     &-wrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 30px;
-      width: 100%;
+      &-ielts,
+      &-toeic,
+      &-basic-english {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+        width: 100%;
+        margin-bottom: 5rem;
+      }
     }
 
     &-content {
@@ -151,8 +160,12 @@ mat {
       }
 
       &-wrapper {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
+        &-ielts,
+        &-toeic,
+        &-basic-english {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
       }
 
       &-content {
@@ -175,7 +188,11 @@ mat {
       }
 
       &-wrapper {
-        grid-template-columns: repeat(2, 1fr);
+        &-ielts,
+        &-toeic,
+        &-basic-english {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
 
       &-content {
@@ -189,7 +206,7 @@ mat {
   }
 }
 
-@media (min-width: 960px) and (max-width: 1279px) {
+@media (min-width: 960px) and (max-width: 1269px) {
   .course {
     &-item {
       &-container {
@@ -198,7 +215,11 @@ mat {
       }
 
       &-wrapper {
-        grid-template-columns: repeat(3, 1fr);
+        &-ielts,
+        &-toeic,
+        &-basic-english {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     }
   }
