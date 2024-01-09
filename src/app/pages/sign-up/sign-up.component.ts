@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ageValidator } from './sign-up.validator';
+import { ageValidator } from '../../validators/age.validator';
 import { formatDate } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { MatDialog } from '@angular/material/dialog';

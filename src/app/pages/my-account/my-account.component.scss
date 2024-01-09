@@ -1,0 +1,150 @@
+.my-account {
+  &-wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-container {
+    max-width: 760px;
+    width: 100%;
+    padding: 2rem 0.775rem 0 0.775rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-content {
+    padding-left: 0.775rem;
+    padding-right: 0.775rem;
+    max-width: 760px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.profile {
+  &-cover {
+    position: relative;
+    height: 7.5rem;
+    padding: 1.75rem 2rem;
+    border-radius: 0.65rem;
+
+    &-img-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 7.5rem;
+      background-color: #e7eaf3;
+      border-radius: 0.65rem;
+
+      img {
+        width: 100%;
+        height: 7.5rem;
+        object-fit: cover;
+        vertical-align: top;
+        border-radius: 0.65rem;
+      }
+    }
+
+    &-avatar {
+      display: flex;
+      margin: -6.3rem auto 0.5rem;
+      position: relative;
+      width: 7.875rem;
+      height: 7.875rem;
+      border: 0.1875rem solid #fff;
+      border-radius: 50%;
+    }
+  }
+
+  &-section {
+    text-align: center;
+  }
+}
+
+.avatar {
+  &-img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  &-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    box-shadow: 0 3px 6px 0 rgba(140, 152, 164, 0.25) !important;
+    display: inline-flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    color: #677788;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
+
+mat {
+  &-icon {
+    color: black;
+  }
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.nav {
+  margin-bottom: 1.5rem;
+
+  &-tabs {
+    border-bottom: 1px solid #e0e0e0;
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  &-item {
+    min-width: 100px;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    color: grey;
+    font-weight: 500;
+    text-align: center;
+    height: 35px;
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+
+  &-item:hover {
+    color: #35509a;
+    position: relative;
+    border-bottom-color: #1d4ed8;
+  }
+
+  &-item.active {
+    color: #1d4ed8;
+    border-bottom-color: #1d4ed8;
+  }
+
+  &-link {
+    padding: 0.8rem 1.15rem;
+  }
+}

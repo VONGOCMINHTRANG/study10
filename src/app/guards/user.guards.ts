@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { Injectable, inject } from '@angular/core';
-import { CanActivateFn, CanLoad, Router, UrlTree } from '@angular/router';
+import { inject } from '@angular/core';
+import { CanActivateFn, Router, UrlTree } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 export const UserGuard: CanActivateFn = ():

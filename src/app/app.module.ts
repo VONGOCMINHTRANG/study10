@@ -19,7 +19,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InformationComponent } from './pages/my-account/information/information.component';
-import { ResultTestsComponent } from './pages/my-account/result-tests/result-tests.component';
 import { MiniComponent } from './pages/tests/mini/mini.component';
 import { TestsComponent } from './pages/tests/tests.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
@@ -39,6 +38,7 @@ import { BuyingTermsComponent } from './pages/buying-terms/buying-terms.componen
 import { TermsComponent } from './pages/terms/terms.component';
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
+import { ChangePasswordComponent } from './pages/my-account/change-password/change-password.component';
 // register Swiper custom elements
 register();
 
@@ -54,7 +54,6 @@ register();
     BlogComponent,
     DialogComponent,
     InformationComponent,
-    ResultTestsComponent,
     TestsComponent,
     MiniComponent,
     AllTestComponent,
@@ -72,6 +71,7 @@ register();
     PrivacyComponent,
     BuyingTermsComponent,
     TermsComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
