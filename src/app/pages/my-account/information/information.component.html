@@ -1,1 +1,124 @@
-<p>information works!</p>
+<div class="information-wrapper">
+  <div class="information-container">
+    <h1>Cập nhật thông tin cá nhân</h1>
+    <div class="content">
+      <form class="update-form" [formGroup]="updateForm" (ngSubmit)="update()">
+        <mat-form-field>
+          <mat-label>Họ và tên</mat-label>
+          <input
+            matInput
+            placeholder="Nhập họ và tên"
+            formControlName="fullName"
+            name="fullName"
+            #fullNameField="matInput"
+          />
+          <mat-error
+            *ngIf="updateForm.controls['fullName'].hasError('required')"
+          >
+            Vui lòng nhập họ và tên
+          </mat-error>
+          <mat-error
+            *ngIf="updateForm.controls['fullName'].hasError('pattern')"
+          >
+            Vui lòng không nhập số, các ký tự đặc biệt
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Nhập Email"
+            formControlName="email"
+            name="email"
+          />
+          <mat-error *ngIf="updateForm.controls['email'].hasError('required')">
+            Vui lòng nhập email
+          </mat-error>
+          <mat-error *ngIf="updateForm.controls['email'].hasError('email')">
+            Vui lòng nhập đúng định dạng email
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Số điện thoại</mat-label>
+          <input
+            matInput
+            placeholder="Nhập số điện thoại"
+            formControlName="phone"
+            name="phone"
+          />
+          <mat-error *ngIf="updateForm.controls['phone'].hasError('required')">
+            Vui lòng nhập số điện thoại
+          </mat-error>
+          <mat-error *ngIf="updateForm.controls['phone'].hasError('pattern')">
+            Vui lòng nhập đủ 10 số và bắt đầu bằng chữ số 0
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ngày sinh</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            placeholder="Nhập hoặc chọn ngày sinh"
+            formControlName="birthDay"
+            name="birthDay"
+          />
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error
+            *ngIf="updateForm.controls['birthDay'].hasError('required')"
+          >
+            Vui lòng chọn ngày sinh
+          </mat-error>
+          <mat-error
+            *ngIf="updateForm.controls['birthDay'].hasError('ageValid')"
+          >
+            Người đăng ký phải từ 3 tuổi trở lên
+          </mat-error>
+        </mat-form-field>
+
+        <mat-radio-group
+          aria-label="Select an option"
+          formControlName="gender"
+          name="gender"
+        >
+          <mat-radio-button value="1">Nam</mat-radio-button>
+          <mat-radio-button value="0">Nữ</mat-radio-button>
+          <mat-error
+            *ngIf="
+              isSubmitted && updateForm.controls['gender'].hasError('required')
+            "
+          >
+            Vui lòng chọn giới tính
+          </mat-error>
+        </mat-radio-group>
+
+        <div class="form-group">
+          <label for="label" class="profile-pic">Ảnh đại diện</label>
+          <input
+            type="file"
+            name="profile-pic"
+            class="form-control-file"
+            formControlName="avatar"
+          />
+        </div>
+
+        <button
+          mat-raised-button
+          type="submit"
+          (click)="update()"
+          color="primary"
+          class="btn-update"
+        >
+          Lưu
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

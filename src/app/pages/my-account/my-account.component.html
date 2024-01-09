@@ -1,4 +1,48 @@
 <div class="my-account-wrapper" *ngIf="this.authService.isLoggedIn()">
+  <div class="my-account-wrapper">
+    <div class="my-account-container">
+      <div class="profile-cover">
+        <div class="profile-cover-img-wrapper">
+          <img src="https://i.ibb.co/2tPpGMg/profile-bg.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="profile-section">
+        <div class="profile-cover-avatar">
+          <img
+            class="avatar-img"
+            src="../../../../assets/img/avatar.jpg"
+            alt=""
+          />
+          <div class="avatar-button">
+            <mat-icon>edit</mat-icon>
+          </div>
+        </div>
+        <h1>vongocminhtrang2712</h1>
+      </div>
+
+      <br />
+
+      <ul class="nav nav-tabs">
+        <li
+          class="nav-item"
+          [ngClass]="{ active: activeNavItem === 'information' }"
+          (click)="handleNavActive('information')"
+        >
+          <span class="nav-link">Thông tin cá nhân</span>
+        </li>
+
+        <li
+          class="nav-item"
+          [ngClass]="{ active: activeNavItem === 'change-password' }"
+          (click)="handleNavActive('change-password')"
+        >
+          <span class="nav-link">Thay mật khẩu</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <div class="my-account-content">
     <router-outlet></router-outlet>
   </div>

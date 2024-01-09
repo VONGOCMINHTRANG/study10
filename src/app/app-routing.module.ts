@@ -8,8 +8,6 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AuthGuard } from './guards/auth.guards';
 import { InformationComponent } from './pages/my-account/information/information.component';
-import { UserCoursesComponent } from './pages/my-account/courses/courses.component';
-import { ResultTestsComponent } from './pages/my-account/result-tests/result-tests.component';
 import { MiniComponent } from './pages/tests/mini/mini.component';
 import { AllTestComponent } from './pages/tests/all/all.component';
 import { UserGuard } from './guards/user.guards';
@@ -23,6 +21,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { BuyingTermsComponent } from './pages/buying-terms/buying-terms.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { ChangePasswordComponent } from './pages/my-account/change-password/change-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -63,14 +62,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'information', pathMatch: 'prefix' },
       { path: 'information', component: InformationComponent },
-      {
-        path: 'user-courses',
-        component: UserCoursesComponent,
-      },
-      {
-        path: 'result-tests',
-        component: ResultTestsComponent,
-      },
+      { path: 'change-password', component: ChangePasswordComponent },
     ],
   },
   { path: 'page-not-found', component: PageNotFoundComponent },
