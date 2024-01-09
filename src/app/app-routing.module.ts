@@ -19,10 +19,19 @@ import { IeltsComponent } from './pages/courses/ielts/ielts.component';
 import { ToeicComponent } from './pages/courses/toeic/toeic.component';
 import { AllCoursesComponent } from './pages/courses/all/all.component';
 import { AllHomeContentComponent } from './pages/home/all/all.component';
+import { AboutComponent } from './pages/about/about.component';
+import { TermsComponent } from './pages/terms/terms.component';
+import { BuyingTermsComponent } from './pages/buying-terms/buying-terms.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: AllHomeContentComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'terms', component: TermsComponent },
+  { path: 'buying-terms', component: BuyingTermsComponent },
+  { path: 'privacy', component: PrivacyComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'sign-in', component: SignInComponent, canActivate: [AuthGuard] },
   { path: 'sign-up', component: SignUpComponent, canActivate: [AuthGuard] },
   {

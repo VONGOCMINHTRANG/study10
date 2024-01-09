@@ -10,8 +10,8 @@ export class SocialLinkComponent {
     console.log('sign in with google');
   }
 
-  signInFacebook() {
-    console.log('sign in facebook');
+  signInGithub() {
+    console.log('sign in github');
   }
 
   signInLinkedin() {
