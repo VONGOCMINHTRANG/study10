@@ -1,3 +1,90 @@
 <div class="footer-wrapper">
-  <div class="container"></div>
+  <div class="footer-container">
+    <div class="footer-row">
+      <div class="footer-row-item">
+        <h1>STUDY10</h1>
+        <div class="year">© 2023</div>
+        <div class="list-social">
+          <span
+            class="social-link fab fa-facebook-square"
+            (click)="
+              redirectToLink('https://www.facebook.com/groups/222433899744570')
+            "
+          ></span>
+          <span
+            class="social-link fab fa-instagram"
+            (click)="
+              redirectToLink('https://www.instagram.com/explore/tags/study/')
+            "
+          ></span>
+          <span
+            class="social-link fab fa-twitter"
+            (click)="redirectToLink('https://twitter.com/?lang=vi')"
+          ></span>
+          <span
+            class="social-link fab fa-linkedin"
+            (click)="redirectToLink('https://www.linkedin.com/home')"
+          ></span>
+        </div>
+      </div>
+
+      <div class="row-two-item">
+        <div class="footer-row-item row-item-1">
+          <h3>Khóa học online</h3>
+          <ul class="list-item">
+            <li class="item-name">IELTS General Reading</li>
+            <li class="item-name">IELTS General Writing</li>
+            <li class="item-name">Complete TOEIC</li>
+            <li class="item-name">IELTS Fundamentals</li>
+            <li class="item-name">IELTS Intensive Listening</li>
+            <li class="item-name">IELTS Intensive Reading</li>
+            <li class="item-name">IELTS Intensive Speaking</li>
+            <li class="item-name">IELTS Intensive Writing</li>
+          </ul>
+        </div>
+
+        <div class="footer-row-item row-item-2">
+          <h3>Tài nguyên</h3>
+          <ul class="list-item">
+            <li class="item-name">Lịch khai giảng</li>
+            <li class="item-name" (click)="redirectToPage('tests')">
+              Thư viện đề thi
+            </li>
+            <li class="item-name" (click)="redirectToPage('blog')">Bài viết</li>
+            <li class="item-name">Kho tài liệu</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row-two-item">
+        <div class="footer-row-item row-item-1">
+          <h3>Hỗ trợ</h3>
+          <ul class="list-item">
+            <li class="item-name">Hướng dẫn mua hàng</li>
+            <li class="item-name" (click)="redirectToPage('sign-in')">
+              Đăng nhập/Tạo tài khoản
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-row-item row-item-2">
+          <h3>STUDY10</h3>
+          <ul class="list-item">
+            <li class="item-name" (click)="redirectToPage('about')">
+              Về chúng tôi
+            </li>
+            <li class="item-name" (click)="redirectToPage('privacy')">
+              Điều khoản bảo mật
+            </li>
+            <li class="item-name" (click)="redirectToPage('terms')">
+              Điều khoản sử dụng
+            </li>
+            <li class="item-name" (click)="redirectToPage('buying-terms')">
+              Điều khoản và Điều Kiện Giao Dịch
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

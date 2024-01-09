@@ -17,7 +17,7 @@
     gap: 10px;
 
     &-btn-google,
-    &-btn-facebook,
+    &-btn-github,
     &-btn-linkedin {
       cursor: pointer;
       margin-top: 0;
@@ -46,9 +46,9 @@
       border-color: #e73b2f;
     }
 
-    &-btn-facebook {
-      background: #1877f2;
-      border-color: #1877f2;
+    &-btn-github {
+      background: #353c4b;
+      border-color: #353c4b;
     }
 
     &-btn-linkedin {
@@ -60,7 +60,7 @@
 
 .fa {
   &-google,
-  &-facebook,
+  &-github,
   &-linkedin {
     color: white;
     cursor: pointer;

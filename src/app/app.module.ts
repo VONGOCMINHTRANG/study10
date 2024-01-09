@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import {
   BrowserModule,
   provideClientHydration,
@@ -33,6 +33,14 @@ import { ToeicComponent } from './pages/courses/toeic/toeic.component';
 import { AllTestComponent } from './pages/tests/all/all.component';
 import { AllCoursesComponent } from './pages/courses/all/all.component';
 import { AllHomeContentComponent } from './pages/home/all/all.component';
+import { AboutComponent } from './pages/about/about.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { BuyingTermsComponent } from './pages/buying-terms/buying-terms.component';
+import { TermsComponent } from './pages/terms/terms.component';
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 @NgModule({
   declarations: [
@@ -60,6 +68,10 @@ import { AllHomeContentComponent } from './pages/home/all/all.component';
     ToeicComponent,
     AllCoursesComponent,
     AllHomeContentComponent,
+    AboutComponent,
+    PrivacyComponent,
+    BuyingTermsComponent,
+    TermsComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,5 +92,6 @@ import { AllHomeContentComponent } from './pages/home/all/all.component';
     },
   ],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
