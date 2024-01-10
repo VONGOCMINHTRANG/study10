@@ -14,4 +14,10 @@ enum IconDialog {
   SUCCESS = 'check_circle_outline',
 }
 
-export { Information, IconDialog };
+enum ColorNotice {
+  ERROR = 'rgb(220, 20, 60)',
+  WARNING = 'rgb(255, 166, 0)',
+  SUCCESS = 'rgb(76, 187, 23)',
+}
+
+export { Information, IconDialog, ColorNotice };

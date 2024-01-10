@@ -1,16 +1,10 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  ViewChild,
-} from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../../components/dialog/dialog.component';
-import { IconDialog } from '../../interfaces';
+import { ColorNotice } from '../../interfaces';
 import { MatInput } from '@angular/material/input';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sign-in',
@@ -35,7 +29,6 @@ export class SignInComponent {
     private router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
-    private dialog: MatDialog,
     private readonly changeDetectorRef: ChangeDetectorRef
   ) {
     this.signInForm = this.fb.group({
@@ -64,23 +57,26 @@ export class SignInComponent {
         localStorage.setItem('user', JSON.stringify(data));
         localStorage.setItem('accessToken', JSON.stringify(accessToken));
 
-        this.dialog.open(DialogComponent, {
-          data: {
-            icon: IconDialog.SUCCESS,
-            title: 'Đăng nhập thành công',
-            message: 'Xin chào bạn!',
-          },
+        Swal.fire({
+          title: 'Đăng nhập thành công',
+          icon: 'success',
+          showCancelButton: false,
+          showConfirmButton: true,
+          confirmButtonColor: ColorNotice.SUCCESS,
+          confirmButtonText: 'Đồng ý',
         });
 
         this.router.navigateByUrl('/');
       },
       error: () => {
-        this.dialog.open(DialogComponent, {
-          data: {
-            icon: IconDialog.ERROR,
-            title: 'Vui lòng kiểm tra lại',
-            message: 'Email hoặc mật khẩu không chính xác!',
-          },
+        Swal.fire({
+          title: 'Vui lòng kiểm tra lại',
+          text: 'Email hoặc mật khẩu không chính xác!',
+          icon: 'warning',
+          showCancelButton: false,
+          showConfirmButton: true,
+          confirmButtonText: 'Đồng ý',
+          confirmButtonColor: ColorNotice.SUCCESS,
         });
       },
     });

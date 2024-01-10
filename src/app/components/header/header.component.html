@@ -26,11 +26,23 @@
         </button>
 
         <ng-template #user>
-          <div class="user-wrapper">
-            <img class="user-img" src="../../../assets/img/avatar.jpg" alt="" />
+          <button
+            id="btn-avatar"
+            [matMenuTriggerFor]="menu"
+            (menuOpened)="menuOpened(true)"
+            (menuClosed)="menuClosed(false)"
+            #menuTrigger
+          >
+            <div class="user-wrapper">
+              <img
+                class="user-img"
+                src="../../../assets/img/avatar.jpg"
+                alt=""
+              />
 
-            <mat-icon class="icon-arrow">keyboard_arrow_down</mat-icon>
-          </div>
+              <mat-icon class="icon-arrow">keyboard_arrow_down</mat-icon>
+            </div>
+          </button>
         </ng-template>
       </mat-list>
 
@@ -47,7 +59,7 @@
       </button>
 
       <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="">
+        <button mat-menu-item>
           <span class="navbar-link">Trang chủ</span>
         </button>
         <button mat-menu-item routerLink="courses">
