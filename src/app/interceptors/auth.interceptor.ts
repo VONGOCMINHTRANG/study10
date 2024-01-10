@@ -9,19 +9,14 @@ import { jwtDecode } from 'jwt-decode';
 import { Observable, from, switchMap } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { DialogComponent } from '../components/dialog/dialog.component';
-import { MatDialog } from '@angular/material/dialog';
-import { IconDialog } from '../interfaces';
+import Swal from 'sweetalert2';
+import { ColorNotice } from '../interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private dialog: MatDialog
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -53,12 +48,13 @@ export class AuthInterceptor implements HttpInterceptor {
             localStorage.removeItem('user');
 
             this.authService.handleLogout().subscribe(() => {
-              this.dialog.open(DialogComponent, {
-                data: {
-                  icon: IconDialog.ERROR,
-                  title: 'Có lỗi xảy ra',
-                  message: 'Vui lòng đăng nhập lại!',
-                },
+              Swal.fire({
+                title: 'Có lỗi xảy ra',
+                icon: 'error',
+                text: 'Vui lòng đăng nhập lại!',
+                showCancelButton: false,
+                confirmButtonText: 'Đồng ý',
+                confirmButtonColor: ColorNotice.SUCCESS,
               });
             });
 

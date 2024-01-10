@@ -7,11 +7,10 @@ import {
   ElementRef,
   HostListener,
 } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
-import { DialogComponent } from '../dialog/dialog.component';
-import { IconDialog } from '../../interfaces';
+import { ColorNotice } from '../../interfaces';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -31,11 +30,7 @@ export class HeaderComponent {
     }
   }
 
-  constructor(
-    public authService: AuthService,
-    private dialog: MatDialog,
-    private router: Router
-  ) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   menuOpened(isOpenMenu: boolean) {
     this.handleMenu.emit(isOpenMenu);
@@ -50,15 +45,16 @@ export class HeaderComponent {
     localStorage.removeItem('user');
 
     this.authService.handleLogout().subscribe(() => {
-      this.dialog.open(DialogComponent, {
-        data: {
-          icon: IconDialog.SUCCESS,
-          title: 'Đăng xuất thành công',
-          message: 'Cám ơn bạn!',
-        },
+      Swal.fire({
+        title: 'Đăng xuất thành công',
+        icon: 'success',
+        showCancelButton: false,
+        showConfirmButton: true,
+        confirmButtonColor: ColorNotice.SUCCESS,
+        confirmButtonText: 'Đồng ý',
       });
-    });
 
-    this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/');
+    });
   }
 }

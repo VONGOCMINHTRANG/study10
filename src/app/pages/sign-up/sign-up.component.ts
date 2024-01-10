@@ -4,10 +4,9 @@ import { Router } from '@angular/router';
 import { ageValidator } from '../../validators/age.validator';
 import { formatDate } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../../components/dialog/dialog.component';
-import { IconDialog } from '../../interfaces';
+import { ColorNotice } from '../../interfaces';
 import { MatInput } from '@angular/material/input';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sign-up',
@@ -35,7 +34,6 @@ export class SignUpComponent {
     private router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
-    private dialog: MatDialog,
     private readonly changeDetectorRef: ChangeDetectorRef
   ) {
     this.signUpForm = this.fb.group({
@@ -87,23 +85,26 @@ export class SignUpComponent {
         localStorage.setItem('user', JSON.stringify(data));
         localStorage.setItem('accessToken', JSON.stringify(accessToken));
 
-        this.dialog.open(DialogComponent, {
-          data: {
-            icon: IconDialog.SUCCESS,
-            title: 'Đăng ký thành công',
-            message: 'Xin chào bạn!',
-          },
+        Swal.fire({
+          title: 'Đăng ký thành công',
+          icon: 'success',
+          showCancelButton: false,
+          showConfirmButton: true,
+          confirmButtonColor: ColorNotice.SUCCESS,
+          confirmButtonText: 'Đồng ý',
         });
 
         this.router.navigateByUrl('/');
       },
       error: () => {
-        this.dialog.open(DialogComponent, {
-          data: {
-            icon: IconDialog.ERROR,
-            title: 'Email đã được đăng ký',
-            message: 'Xin vui lòng chọn email khác!',
-          },
+        Swal.fire({
+          title: 'Email đã được đăng ký',
+          text: 'Xin vui lòng chọn email khác!',
+          icon: 'warning',
+          showCancelButton: false,
+          showConfirmButton: true,
+          confirmButtonText: 'Đồng ý',
+          confirmButtonColor: ColorNotice.SUCCESS,
         });
       },
     });
