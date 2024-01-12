@@ -85,52 +85,6 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field>
-            <mat-label>Writing</mat-label>
-            <input
-              matInput
-              placeholder="Nhập điểm của bạn ..."
-              formControlName="writing"
-              name="writing"
-            />
-            <mat-error
-              *ngIf="
-                calculateToeicForm.controls['writing'].hasError('required')
-              "
-            >
-              Vui lòng nhập điểm của bạn
-            </mat-error>
-            <mat-error
-              *ngIf="calculateToeicForm.controls['writing'].hasError('pattern')"
-            >
-              Vui lòng chỉ nhập số
-            </mat-error>
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Speaking</mat-label>
-            <input
-              matInput
-              placeholder="Nhập điểm của bạn ..."
-              formControlName="speaking"
-              name="speaking"
-            />
-            <mat-error
-              *ngIf="
-                calculateToeicForm.controls['speaking'].hasError('required')
-              "
-            >
-              Vui lòng nhập điểm của bạn
-            </mat-error>
-            <mat-error
-              *ngIf="
-                calculateToeicForm.controls['speaking'].hasError('pattern')
-              "
-            >
-              Vui lòng chỉ nhập số
-            </mat-error>
-          </mat-form-field>
-
           <button mat-raised-button color="primary">Tính điểm</button>
         </form>
 

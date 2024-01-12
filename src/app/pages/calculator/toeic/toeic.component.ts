@@ -27,14 +27,6 @@ export class CalculatorToeicComponent {
         null,
         [Validators.required, Validators.pattern(this.scorePattern)],
       ],
-      writing: [
-        null,
-        [Validators.required, Validators.pattern(this.scorePattern)],
-      ],
-      speaking: [
-        null,
-        [Validators.required, Validators.pattern(this.scorePattern)],
-      ],
     });
   }
 
