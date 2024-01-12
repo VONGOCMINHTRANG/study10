@@ -1,0 +1,196 @@
+<div class="ielts-wrapper">
+  <div class="ielts-container">
+    <h1>Tính điểm thi IELTS Academic</h1>
+
+    <ul class="nav nav-pills">
+      <li
+        class="nav-item"
+        [ngClass]="{ active: activeNavItem === 'overall' }"
+        (click)="handleNavItem('overall')"
+      >
+        Tính điểm overall
+      </li>
+      <li
+        class="nav-item"
+        [ngClass]="{
+          active: activeNavItem === 'table-score-listening-reading'
+        }"
+        (click)="handleNavItem('table-score-listening-reading')"
+      >
+        Bảng tính điểm listening và reading
+      </li>
+    </ul>
+
+    <br />
+
+    <div class="tab-content">
+      <div class="tab-pane" *ngIf="activeNavItem === 'overall'">
+        <form
+          class="calculate-ielts-form"
+          [formGroup]="calculateIeltsForm"
+          (ngSubmit)="calculate()"
+        >
+          <mat-form-field>
+            <mat-label>Listening</mat-label>
+            <input
+              matInput
+              placeholder="Nhập điểm của bạn ..."
+              formControlName="listening"
+              name="listening"
+              #listeningField="matInput"
+            />
+            <mat-error
+              *ngIf="
+                calculateIeltsForm.controls['listening'].hasError('required')
+              "
+            >
+              Vui lòng nhập điểm của bạn
+            </mat-error>
+            <mat-error
+              *ngIf="
+                calculateIeltsForm.controls['listening'].hasError('pattern')
+              "
+            >
+              Vui lòng chỉ nhập số
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Reading</mat-label>
+            <input
+              matInput
+              placeholder="Nhập điểm của bạn ..."
+              formControlName="reading"
+              name="reading"
+            />
+            <mat-error
+              *ngIf="calculateIeltsForm.controls['reading'].hasError('reading')"
+            >
+              Vui lòng nhập điểm của bạn
+            </mat-error>
+            <mat-error
+              *ngIf="calculateIeltsForm.controls['reading'].hasError('pattern')"
+            >
+              Vui lòng chỉ nhập số
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Writing</mat-label>
+            <input
+              matInput
+              placeholder="Nhập điểm của bạn ..."
+              formControlName="writing"
+              name="writing"
+            />
+            <mat-error
+              *ngIf="
+                calculateIeltsForm.controls['writing'].hasError('required')
+              "
+            >
+              Vui lòng nhập điểm của bạn
+            </mat-error>
+            <mat-error
+              *ngIf="calculateIeltsForm.controls['writing'].hasError('pattern')"
+            >
+              Vui lòng chỉ nhập số
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Speaking</mat-label>
+            <input
+              matInput
+              placeholder="Nhập điểm của bạn ..."
+              formControlName="speaking"
+              name="speaking"
+            />
+            <mat-error
+              *ngIf="
+                calculateIeltsForm.controls['speaking'].hasError('required')
+              "
+            >
+              Vui lòng nhập điểm của bạn
+            </mat-error>
+            <mat-error
+              *ngIf="
+                calculateIeltsForm.controls['speaking'].hasError('pattern')
+              "
+            >
+              Vui lòng chỉ nhập số
+            </mat-error>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary">Tính điểm</button>
+        </form>
+
+        <p class="contentblock">
+          Điểm overall của bạn là:
+          <span>9.0</span>
+        </p>
+      </div>
+
+      <div
+        class="tab-pane"
+        *ngIf="activeNavItem === 'table-score-listening-reading'"
+      >
+        <p class="table-title">
+          Bảng quy đổi điểm raw sang scaled score IELTS Listening và Reading
+          được lấy từ nguồn:
+          https://ielts.com.au/australia/results/band-score-calculation
+        </p>
+
+        <p class="table-name">IELTS Listening</p>
+
+        <table mat-table [dataSource]="dataListening" id="listening">
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="rawScore">
+            <th mat-header-cell *matHeaderCellDef>Raw score</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.rawScore }}
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="scaledScore">
+            <th mat-header-cell *matHeaderCellDef>Scaled score</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.scaledScore }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+        <p class="table-name">IELTS Reading</p>
+        <table mat-table [dataSource]="dataReading" id="reading">
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="rawScore">
+            <th mat-header-cell *matHeaderCellDef>Raw score</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.rawScore }}
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="scaledScore">
+            <th mat-header-cell *matHeaderCellDef>Scaled score</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.scaledScore }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

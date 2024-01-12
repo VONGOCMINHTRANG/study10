@@ -1,15 +1,19 @@
 <div class="calculate-wrapper">
-  <img
-    class="calculate-img"
-    src="https://i.ibb.co/851DkGk/tinhdiem-ielts.png"
-    alt=""
-  />
+  <div (click)="redirectToPage('ielts')">
+    <img
+      class="calculate-img"
+      src="https://i.ibb.co/851DkGk/tinhdiem-ielts.png"
+      alt=""
+    />
+  </div>
 
-  <img
-    class="calculate-img"
-    src="https://i.ibb.co/9wjSshk/tinhdiem-toeic.jpg"
-    alt=""
-  />
+  <div (click)="redirectToPage('toeic')">
+    <img
+      class="calculate-img"
+      src="https://i.ibb.co/9wjSshk/tinhdiem-toeic.jpg"
+      alt=""
+    />
+  </div>
 
   <mat-card class="group-card" (click)="getSharedIeltsGroup()">
     <img

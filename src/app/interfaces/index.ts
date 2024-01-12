@@ -20,4 +20,9 @@ enum ColorNotice {
   SUCCESS = 'rgb(76, 187, 23)',
 }
 
-export { Information, IconDialog, ColorNotice };
+interface IDataScore {
+  rawScore: number;
+  scaledScore: number;
+}
+
+export { Information, IconDialog, ColorNotice, IDataScore };
