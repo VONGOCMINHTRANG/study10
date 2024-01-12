@@ -42,6 +42,7 @@ import { ChangePasswordComponent } from './pages/my-account/change-password/chan
 import { CalculatorComponent } from './pages/calculator/calculator.component';
 import { CalculatorToeicComponent } from './pages/calculator/toeic/toeic.component';
 import { CalculatorIeltsComponent } from './pages/calculator/ielts/ielts.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 // register Swiper custom elements
 register();
@@ -79,6 +80,7 @@ register();
     CalculatorComponent,
     CalculatorIeltsComponent,
     CalculatorToeicComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
