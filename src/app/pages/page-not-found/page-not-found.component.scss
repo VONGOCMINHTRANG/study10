@@ -1,0 +1,17 @@
+.not-found {
+  &-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-container {
+    max-width: 1270px;
+    width: 100%;
+    padding: 2rem 0.775rem 0 0.775rem;
+    margin: auto;
+  }
+}
+
+mat-card {
+  border: 1px solid #e0e0e0;
+}
