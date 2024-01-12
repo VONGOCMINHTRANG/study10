@@ -39,6 +39,10 @@ import { TermsComponent } from './pages/terms/terms.component';
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
 import { ChangePasswordComponent } from './pages/my-account/change-password/change-password.component';
+import { CalculatorComponent } from './pages/calculator/calculator.component';
+import { CalculatorToeicComponent } from './pages/calculator/toeic/toeic.component';
+import { CalculatorIeltsComponent } from './pages/calculator/ielts/ielts.component';
+
 // register Swiper custom elements
 register();
 
@@ -72,6 +76,9 @@ register();
     BuyingTermsComponent,
     TermsComponent,
     ChangePasswordComponent,
+    CalculatorComponent,
+    CalculatorIeltsComponent,
+    CalculatorToeicComponent,
   ],
   imports: [
     BrowserModule,

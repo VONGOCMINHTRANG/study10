@@ -1,0 +1,31 @@
+<div class="calculator-wrapper">
+  <div class="calculator-container">
+    <div class="image-wrapper">
+      <img src="https://i.ibb.co/0MZzH9h/profile-bg.jpg" alt="" />
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li
+        class="nav-item"
+        [ngClass]="{ active: activeNavItem === 'ielts' }"
+        (click)="handleNavActive('ielts')"
+      >
+        <span class="nav-link">IELTS</span>
+      </li>
+
+      <li
+        class="nav-item"
+        [ngClass]="{ active: activeNavItem === 'toeic' }"
+        (click)="handleNavActive('toeic')"
+      >
+        <span class="nav-link">TOEIC</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

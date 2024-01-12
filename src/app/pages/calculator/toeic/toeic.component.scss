@@ -1,0 +1,105 @@
+h1 {
+  line-height: 1.3;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  &-item {
+    margin-right: 0.4rem;
+    padding: 4px 15px;
+    background-color: #f8f9fa;
+    border-radius: 25px;
+    color: rgb(72, 70, 70);
+    cursor: pointer;
+
+    &.active {
+      background-color: #e8f2ff;
+      color: #35509a;
+      font-weight: 500;
+    }
+  }
+}
+
+.tab {
+  &-pane {
+    transition: opacity 0.15s linear;
+    padding-top: 0.5rem;
+  }
+}
+
+form {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+mat-form-field {
+  max-width: 50%;
+  width: 100%;
+  padding-right: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contentblock {
+  padding: 1rem;
+  border-radius: 0.65rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 0 0 rgba(143, 156, 173, 0.2);
+  background-color: #f8f9fa !important;
+
+  span {
+    font-size: 1.2rem;
+    color: #e43a45;
+    font-weight: 600;
+  }
+}
+
+.mdc-data-table__table {
+  min-width: 0 !important;
+  max-width: 760px;
+  width: 100%;
+  border: 1px solid #f2f2f2;
+  margin-bottom: 3rem;
+}
+
+th {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+td {
+  font-size: 1rem;
+}
+
+.table {
+  &-name {
+    font-size: 1.1rem;
+    color: #35509a;
+    font-weight: 500;
+  }
+}
+
+#listening tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+@media (max-width: 539px) {
+  mat-form-field {
+    max-width: 100%;
+  }
+
+  .nav {
+    &-item {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

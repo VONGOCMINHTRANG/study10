@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
+  constructor(private router: Router) {}
+
   getSharedEnglishGroup() {
     window.open(
       'https://www.facebook.com/groups/dilam.hoctienganh/?ref=web_social_plugin',
@@ -22,5 +25,9 @@ export class SidebarComponent {
 
   getSharedToeicGroup() {
     window.open('https://www.facebook.com/groups/onthitoeic990', '_blank');
+  }
+
+  redirectToPage(item: string) {
+    this.router.navigateByUrl(`calculator/${item}`);
   }
 }

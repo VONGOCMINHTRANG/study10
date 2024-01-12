@@ -22,6 +22,9 @@ import { TermsComponent } from './pages/terms/terms.component';
 import { BuyingTermsComponent } from './pages/buying-terms/buying-terms.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { ChangePasswordComponent } from './pages/my-account/change-password/change-password.component';
+import { CalculatorComponent } from './pages/calculator/calculator.component';
+import { CalculatorIeltsComponent } from './pages/calculator/ielts/ielts.component';
+import { CalculatorToeicComponent } from './pages/calculator/toeic/toeic.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -39,6 +42,15 @@ const routes: Routes = [
     children: [
       { path: '', component: AllTestComponent },
       { path: 'mini', component: MiniComponent },
+    ],
+  },
+  {
+    path: 'calculator',
+    component: CalculatorComponent,
+    children: [
+      { path: '', component: CalculatorIeltsComponent },
+      { path: 'toeic', component: CalculatorToeicComponent },
+      { path: 'ielts', component: CalculatorIeltsComponent },
     ],
   },
   {

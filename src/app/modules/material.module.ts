@@ -19,6 +19,7 @@ import {
   MatDialogContent,
   MatDialogTitle,
 } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import {
     MatDialogClose,
     MatDialogContent,
     MatDialogTitle,
+    MatTableModule,
   ],
   exports: [
     MatSlideToggleModule,
@@ -62,6 +64,7 @@ import {
     MatDialogClose,
     MatDialogContent,
     MatDialogTitle,
+    MatTableModule,
   ],
   providers: [MatDatepickerModule, MatNativeDateModule],
 })
