@@ -13,6 +13,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import {
   MatDialogActions,
   MatDialogClose,
@@ -44,6 +45,7 @@ import { MatTableModule } from '@angular/material/table';
     MatDialogContent,
     MatDialogTitle,
     MatTableModule,
+    MatSidenavModule,
   ],
   exports: [
     MatSlideToggleModule,
@@ -65,6 +67,7 @@ import { MatTableModule } from '@angular/material/table';
     MatDialogContent,
     MatDialogTitle,
     MatTableModule,
+    MatSidenavModule,
   ],
   providers: [MatDatepickerModule, MatNativeDateModule],
 })

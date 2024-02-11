@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,12 +8,15 @@ import { Router } from '@angular/router';
 })
 export class CoursesComponent {
   activeCourseItem: string = 'all-courses';
+  isDetailPage: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cdr: ChangeDetectorRef) {}
+
+  ngAfterViewChecked() {
+    this.cdr.detectChanges();
+  }
 
   handleCourseActive(item: string, link: string) {
-    console.log(link);
-
     this.activeCourseItem = item;
     this.router.navigateByUrl(`/courses/${link}`);
   }

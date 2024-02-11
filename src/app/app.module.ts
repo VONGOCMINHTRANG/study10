@@ -36,13 +36,17 @@ import { AboutComponent } from './pages/about/about.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { BuyingTermsComponent } from './pages/buying-terms/buying-terms.component';
 import { TermsComponent } from './pages/terms/terms.component';
-// import function to register Swiper custom elements
-import { register } from 'swiper/element/bundle';
 import { ChangePasswordComponent } from './pages/my-account/change-password/change-password.component';
 import { CalculatorComponent } from './pages/calculator/calculator.component';
 import { CalculatorToeicComponent } from './pages/calculator/toeic/toeic.component';
 import { CalculatorIeltsComponent } from './pages/calculator/ielts/ielts.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+import { DetailComponent } from './pages/courses/detail/detail.component';
 
 // register Swiper custom elements
 register();
@@ -81,6 +85,9 @@ register();
     CalculatorIeltsComponent,
     CalculatorToeicComponent,
     PageNotFoundComponent,
+    AdminComponent,
+    DashboardComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

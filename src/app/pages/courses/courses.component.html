@@ -1,5 +1,5 @@
 <div class="course-wrapper">
-  <div class="course-content">
+  <div class="course-content" *ngIf="!isDetailPage">
     <div class="course-content-container">
       <div class="course-content-header">
         <h1 class="title">Khóa học online</h1>
@@ -47,8 +47,8 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="content-wrapper">
+  <div class="container" [ngClass]="{ 'detail-page': isDetailPage }">
+    <div class="content-wrapper" [ngClass]="{ 'detail-page': isDetailPage }">
       <router-outlet></router-outlet>
     </div>
   </div>

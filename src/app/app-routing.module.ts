@@ -25,6 +25,9 @@ import { ChangePasswordComponent } from './pages/my-account/change-password/chan
 import { CalculatorComponent } from './pages/calculator/calculator.component';
 import { CalculatorIeltsComponent } from './pages/calculator/ielts/ielts.component';
 import { CalculatorToeicComponent } from './pages/calculator/toeic/toeic.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { DetailComponent } from './pages/courses/detail/detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -40,7 +43,8 @@ const routes: Routes = [
     path: 'tests',
     component: TestsComponent,
     children: [
-      { path: '', component: AllTestComponent },
+      { path: '', redirectTo: 'all', pathMatch: 'prefix' },
+      { path: 'all', component: AllTestComponent },
       { path: 'mini', component: MiniComponent },
     ],
   },
@@ -48,7 +52,7 @@ const routes: Routes = [
     path: 'calculator',
     component: CalculatorComponent,
     children: [
-      { path: '', component: CalculatorIeltsComponent },
+      { path: '', redirectTo: 'ielts', pathMatch: 'prefix' },
       { path: 'toeic', component: CalculatorToeicComponent },
       { path: 'ielts', component: CalculatorIeltsComponent },
     ],
@@ -57,12 +61,17 @@ const routes: Routes = [
     path: 'courses',
     component: CoursesComponent,
     children: [
-      { path: '', component: AllCoursesComponent },
+      { path: '', redirectTo: 'all', pathMatch: 'prefix' },
+      { path: 'all', component: AllCoursesComponent },
       { path: 'ielts', component: IeltsComponent },
       { path: 'toeic', component: ToeicComponent },
       {
         path: 'basic-english',
         component: BasicEnglishComponent,
+      },
+      {
+        path: 'series/:id',
+        component: DetailComponent,
       },
     ],
   },
@@ -75,6 +84,22 @@ const routes: Routes = [
       { path: '', redirectTo: 'information', pathMatch: 'prefix' },
       { path: 'information', component: InformationComponent },
       { path: 'change-password', component: ChangePasswordComponent },
+    ],
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [UserGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
     ],
   },
   { path: 'page-not-found', component: PageNotFoundComponent },
