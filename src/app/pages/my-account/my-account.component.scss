@@ -117,7 +117,7 @@ h1 {
     overflow-y: hidden;
     flex-wrap: nowrap;
     position: relative;
-    white-space: nowrap;
+    min-width: 150px;
   }
 
   &-item {

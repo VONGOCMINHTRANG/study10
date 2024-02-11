@@ -1,0 +1,84 @@
+<div class="detail-wrapper">
+  <div class="detail-content">
+    <div class="detail-content-container">
+      <div class="detail-image">
+        <div class="overlay"></div>
+        <div class="detail-content-header">
+          <h3 class="title">
+            Combo khoá học IELTS Intensive [Tặng khoá TED Talks]
+          </h3>
+
+          <mat-card-subtitle>
+            <span class="detail-tag">#Khóa học online </span>
+          </mat-card-subtitle>
+
+          <mat-card-subtitle>
+            <span class="detail-student">
+              <span class="star-number">4.9</span>
+              <span class="detail-student-star">
+                <mat-icon class="icon-star">star</mat-icon>
+                <mat-icon class="icon-star">star</mat-icon>
+                <mat-icon class="icon-star">star</mat-icon>
+                <mat-icon class="icon-star">star</mat-icon>
+                <mat-icon class="icon-star">star_half</mat-icon>
+              </span>
+              <span class="detail-student-total">38,171 Học viên</span>
+            </span>
+          </mat-card-subtitle>
+
+          <ul class="detail-list">
+            <li class="detail-list-item">
+              <mat-icon class="icon-check-circle">check_circle</mat-icon>
+              Dành cho các bạn từ band 4.0 trở lên.
+            </li>
+            <li class="detail-list-item">
+              <mat-icon class="icon-check-circle">check_circle</mat-icon>
+              Sở hữu trọn bộ 4 khoá học IELTS Intensive online: Listening -
+              Reading - Writing - Speaking
+            </li>
+            <li class="detail-list-item">
+              <mat-icon class="icon-check-circle">check_circle</mat-icon>
+              Tặng kèm khoá Luyện nghe nói tiếng Anh cùng Ted Talks trị giá 599k
+            </li>
+            <li class="detail-list-item">
+              <mat-icon class="icon-check-circle">check_circle</mat-icon>
+              Combo khoá học có giá trị 12 tháng
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail-slug">
+        <ul class="nav-tabs">
+          <li
+            class="nav-item"
+            (click)="handleNavActive('objective-course')"
+            [ngClass]="{ active: activeNavItem === 'objective-course' }"
+          >
+            Mục tiêu khóa học
+          </li>
+          <li
+            class="nav-item"
+            (click)="handleNavActive('course-information')"
+            [ngClass]="{ active: activeNavItem === 'course-information' }"
+          >
+            Thông tin khóa học
+          </li>
+          <li
+            class="nav-item"
+            (click)="handleNavActive('curriculumn')"
+            [ngClass]="{ active: activeNavItem === 'curriculumn' }"
+          >
+            Chương trình học
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
