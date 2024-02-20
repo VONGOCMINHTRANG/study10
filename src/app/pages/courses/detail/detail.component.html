@@ -1,7 +1,7 @@
 <div class="detail-wrapper">
   <div class="detail-content">
     <div class="detail-content-container">
-      <div class="detail-image">
+      <div class="detail-content-image">
         <div class="overlay"></div>
         <div class="detail-content-header">
           <h3 class="title">
@@ -66,8 +66,8 @@
           </li>
           <li
             class="nav-item"
-            (click)="handleNavActive('curriculumn')"
-            [ngClass]="{ active: activeNavItem === 'curriculumn' }"
+            (click)="handleNavActive('curriculum')"
+            [ngClass]="{ active: activeNavItem === 'curriculum' }"
           >
             Chương trình học
           </li>
@@ -78,7 +78,428 @@
 
   <div class="container">
     <div class="content-wrapper">
-      <router-outlet></router-outlet>
+      <div class="course-sidebar">
+        <div class="course-sidebar-top">
+          <mat-card class="course-sidebar-card">
+            <img
+              class="course-sidebar-img"
+              mat-card-image
+              src="https://i.ibb.co/YfKgRMz/combo-ielts.jpg"
+              alt="combo-ielts"
+            />
+          </mat-card>
+
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title> Ưu đãi đặc biệt tháng 2/2024: </mat-card-title>
+
+              <mat-card-subtitle>
+                <div class="course-cost">
+                  <span class="course-cost-new">2.925.000đ</span>
+                  <div class="course-cost-previous">
+                    <span class="course-cost-old">Giá gốc: 5.236.000đ </span>
+                    <span class="course-cost-saving">
+                      Tiết kiệm: 2.421.000đ
+                    </span>
+                  </div>
+                </div>
+              </mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card-header>
+
+          <button mat-raised-button color="primary" class="btn-apply">
+            ĐĂNG KÝ HỌC NGAY
+          </button>
+        </div>
+
+        <hr />
+
+        <div class="course-sidebar-content">
+          <div class="course-sidebar-item">
+            <mat-icon class="icon-course-sidebar-item">group_add</mat-icon>
+            <span>46,833 học viên đã đăng ký</span>
+          </div>
+          <div class="course-sidebar-item">
+            <mat-icon class="icon-course-sidebar-item">
+              bookmark_border
+            </mat-icon>
+            <span>82 chủ đề, 805 bài học</span>
+          </div>
+          <div class="course-sidebar-item">
+            <mat-icon class="icon-course-sidebar-item">notes</mat-icon>
+            <span> 1,962 bài tập thực hành</span>
+          </div>
+          <div class="course-sidebar-item">
+            <mat-icon class="icon-course-sidebar-item">access_time</mat-icon>
+            <span>Combo 5 khoá học có giá trị 12 tháng</span>
+          </div>
+          <div class="course-sidebar-item">
+            <mat-icon class="icon-course-sidebar-item">phonelink</mat-icon>
+            <span>Có thể học trên điện thoại và máy tính</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-series-items">
+        <h5>Combo này bao gồm :</h5>
+        <ol>
+          <li>
+            <span class="series-items-text">
+              [IELTS Intensive Listening] Chiến lược làm bài - Chữa đề - Luyện
+              nghe IELTS Listening theo phương pháp Dictation
+            </span>
+          </li>
+          <li>
+            <span class="series-items-text">
+              [IELTS Intensive Reading] Chiến lược làm bài - Chữa đề - Từ vựng
+              IELTS Reading
+            </span>
+          </li>
+          <li>
+            <span class="series-items-text">
+              [IELTS Intensive Speaking] Thực hành luyện tập IELTS Speaking
+            </span>
+          </li>
+          <li>
+            <span class="series-items-text">
+              [IELTS Intensive Writing] Thực hành luyện tập IELTS Writing
+            </span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="course-objectives">
+        <h1 #objectiveRef id="objective">Bạn sẽ đạt được gì sau khóa học ?</h1>
+
+        <div class="course-objectives-items">
+          <div class="course-objectives-items-left">
+            <span class="series-items-text">
+              1️⃣ Làm chủ tốc độ và các ngữ điệu khác nhau trong phần thi IELTS
+              Listening
+            </span>
+
+            <span class="series-items-text">
+              2️⃣ Luyện tập nghe hiểu các dạng recording của IELTS
+            </span>
+
+            <span class="series-items-text">
+              3️⃣ Nắm trọn 4000 từ vựng xuất hiện nhiều trong phần thi IELTS
+              Reading
+            </span>
+          </div>
+
+          <div class="course-objectives-items-right">
+            <span class="series-items-text">
+              4️⃣ Tận dụng vốn từ đã học để tự tin giải quyết phần thi IELTS
+              Reading một cách dễ dàng
+            </span>
+
+            <span class="series-items-text">
+              5️⃣ Nắm vững ngữ cảnh sử dụng từ vựng, phục vụ cho IELTS Writing
+              cũng như viết luận trong môi trường học thuật
+            </span>
+
+            <span class="series-items-text">
+              6️⃣ Luyện tập phát âm, từ vựng, ngữ pháp và thực hành luyện nói các
+              chủ đề thường gặp và forecast trong IELTS Speaking
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-information">
+        <h2 #informationRef id="information">Thông tin khóa học</h2>
+        <div class="course-description">
+          <blockquote>
+            <p>Bài học được biên soạn và giảng dạy bởi:</p>
+            <ul>
+              <li>
+                Ms. Phuong Nguyen, Macalester College, USA. TOEFL 114, IELTS
+                8.0, SAT 2280, GRE Verbal 165/170
+              </li>
+              <li>
+                Ms. Uyen Tran, FTU. IELTS 8.0 (Listening 8.5, Reading 8.5)
+              </li>
+            </ul>
+          </blockquote>
+
+          <div class="course-method">Bạn sẽ học như thế nào ?</div>
+          <p>
+            <strong>
+              1. Chiến lược làm tất cả các dạng câu hỏi IELTS Reading và
+              Listening
+            </strong>
+          </p>
+          <p>
+            Khóa học IELTS Intensive Listening và Intensive Reading cung cấp
+            video bài giảng hướng dẫn chi tiết cách làm tất cả các dạng câu hỏi,
+            tips làm nhanh & chính xác và chiến lược kiểm soát thời gian hiệu
+            quả.
+          </p>
+          <p>
+            <strong> 2. Video chữa đề chi tiết </strong>
+          </p>
+          <p>
+            Khóa học IELTS Intensive cung cấp 400h clip chữa chi tiết toàn bộ
+            các câu hỏi trong các bộ đề thi. Mỗi bài chữa đều bao gồm phương
+            pháp đọc câu hỏi, tìm keywords, cách tìm đáp án đúng hay lựa chọn
+            câu trả lời phù hợp.
+          </p>
+          <p>
+            <strong>
+              3. Phương pháp luyện nghe và chép chính tả cực hiệu quả
+            </strong>
+          </p>
+          <p>
+            Khoá học IELTS Intensive Listening - luyện nghe bằng phương pháp
+            Dictation gồm 176 bài nghe format thi thật. Phương pháp dictation là
+            một phương pháp học ngôn ngữ bằng cách nghe hội thoại hoặc văn bản,
+            và sau đó viết ra những gì bạn nghe được. STUDY4 có 3 chế độ luyện
+            tập: dễ, trung bình và nâng cao; tăng dần tương ứng với số lượng ô
+            trống bạn cần điền trong 1 câu.
+          </p>
+          <p>
+            <strong>
+              4. Bộ từ vựng có xác suất 99% sẽ xuất hiện trong phần thi IELTS
+              Reading và Listening
+            </strong>
+          </p>
+          <p>
+            Với mục đích giúp các bạn học viên tiết kiệm thời gian tra từ, đánh
+            dấu cũng như có phương tiện ôn từ hiệu quả nhất, STUDY4 đã tổng hợp
+            từ vựng trong bộ đề này thành khoá học duy nhất gồm flashcards,
+            highlights từ vựng trong bài, và các bài tập thực hành dễ dùng dễ
+            học.
+          </p>
+          <p>
+            <strong> 5. Hệ thống bài luyện tập dưới dạng game lý thú </strong>
+          </p>
+          <p>
+            Với mỗi list từ vựng, thay vì phải làm những bài tập khô khan, bạn
+            sẽ “phải” chơi hàng loạt trò chơi. Việc này vừa giúp việc học không
+            hề nhàm chán, căng thẳng mà việc tiếp xúc cả hình ảnh, màu sắc, âm
+            thanh liên quan đền từ vựng sẽ kích thích não bộ ghi nhớ nhanh hơn
+            và lâu hơn.
+          </p>
+          <p>
+            4000 từ vựng tưởng như nhiều nhưng với phương pháp học mà chơi, chơi
+            mà học, việc phá đảo khối lượng từ khủng như vậy hoàn toàn nằm trong
+            lòng bàn tay bạn.
+          </p>
+          <p>
+            <strong>
+              6. Nắm trọn cách trả lời các dạng câu hỏi Task 1 và chủ đề thông
+              dụng Task 2 phần thi IELTS Writing
+            </strong>
+          </p>
+          <p>
+            <strong>
+              7. Thực hành luyện tập các chủ đề thường gặp cũng như forecast mới
+              nhất Part 1, 2, 3 phần thi IELTS Speaking
+            </strong>
+          </p>
+          <p>
+            <strong>
+              8. Chấm chữa chi tiết bài làm IELTS Speaking và Writing bởi giáo
+              viên bản ngữ
+            </strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="course-curriculum" id="curriculum">
+        <h1 #curriculumRef>Chương trình học</h1>
+        <div class="series-curriculum-course">
+          <div class="series-curriculum-course-number">
+            Khóa học
+            <span class="series-curriculum-course-number-index">1</span>
+          </div>
+          <div class="series-curriculum-course-content">
+            <h3>
+              [IELTS Intensive Listening] Chiến lược làm bài - Chữa đề - Luyện
+              nghe IELTS Listening theo phương pháp Dictation
+            </h3>
+            <mat-card-subtitle>
+              <span class="series-student">
+                <span class="star-number">4.9</span>
+                <span class="series-student-star">
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star_half</mat-icon>
+                </span>
+                <span class="series-student-total">38,171 Học viên</span>
+              </span>
+            </mat-card-subtitle>
+
+            <ul class="detail-list">
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Dành cho các bạn band 4.0+ đang target band 7.0+ IELTS
+                Listening.
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                10h học video bài giảng và 200h clip chữa đề chi tiết giúp nắm
+                vững phương pháp làm tất cả các dạng câu hỏi trong IELTS
+                Listening đặc biệt các dạng khó như Matching, Multiple choice.
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Giải quyết triệt để các vấn đề thường gặp khi nghe IELTS như
+                miss thông tin, âm nối, tốc độ nói nhanh, ngữ điệu khó bằng
+                phương pháp nghe chép chính tả.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+
+        <div class="series-curriculum-course">
+          <div class="series-curriculum-course-number">
+            Khóa học
+            <span class="series-curriculum-course-number-index">2</span>
+          </div>
+          <div class="series-curriculum-course-content">
+            <h3>
+              [IELTS Intensive Reading] Chiến lược làm bài - Chữa đề - Từ vựng
+              IELTS Reading
+            </h3>
+            <mat-card-subtitle>
+              <span class="series-student">
+                <span class="star-number">4.9</span>
+                <span class="series-student-star">
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star_half</mat-icon>
+                </span>
+                <span class="series-student-total">10,633 Học viên</span>
+              </span>
+            </mat-card-subtitle>
+
+            <ul class="detail-list">
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Dành cho các bạn từ band 4.0 trở lên target 7.0+ IELTS Reading.
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                10 giờ học video bài giảng và 200h clip chữa đề chi tiết các bộ
+                đề thi.
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Nắm trọn 4000 từ vựng có xác suất 99% sẽ xuất hiện trong phần
+                thi IELTS Reading và Listening tổng hợp từ đề thi thật.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+
+        <div class="series-curriculum-course">
+          <div class="series-curriculum-course-number">
+            Khóa học
+            <span class="series-curriculum-course-number-index">3</span>
+          </div>
+          <div class="series-curriculum-course-content">
+            <h3>
+              [IELTS Intensive Speaking] Thực hành luyện tập IELTS Speaking
+            </h3>
+            <mat-card-subtitle>
+              <span class="series-student">
+                <span class="star-number">4.9</span>
+                <span class="series-student-star">
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star_half</mat-icon>
+                </span>
+                <span class="series-student-total">9,936 Học viên</span>
+              </span>
+            </mat-card-subtitle>
+
+            <ul class="detail-list">
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Dành cho các bạn từ band 4.0 trở lên đang target band 6.0+
+                Speaking.
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Làm quen với các chủ đề thường gặp trong Part 1, 2 và 3 của phần
+                thi IELTS Speaking với hơn 200 bài samples mẫu từ cựu giám khảo
+                IELTS và giáo viên chuyên môn cao (Mitchell Mckee).
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Luyện tập phát âm và thực hành luyện nói theo phương pháp
+                shadowing.
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Cải thiện vượt bậc vốn từ vựng, ngữ pháp, và cách xây dựng cấu
+                trúc câu trả lời IELTS Speaking với các dạng bài tập phong phú
+                đa dạng.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="series-curriculum-course">
+          <div class="series-curriculum-course-number">
+            Khóa học
+            <span class="series-curriculum-course-number-index">4</span>
+          </div>
+          <div class="series-curriculum-course-content">
+            <h3>[IELTS Intensive Writing] Thực hành luyện tập IELTS Writing</h3>
+            <mat-card-subtitle>
+              <span class="series-student">
+                <span class="star-number">4.9</span>
+                <span class="series-student-star">
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star</mat-icon>
+                  <mat-icon class="icon-star">star_half</mat-icon>
+                </span>
+                <span class="series-student-total">6,367 Học viên</span>
+              </span>
+            </mat-card-subtitle>
+
+            <ul class="detail-list">
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Dành cho các bạn từ band 4.0 trở lên đang target band 6.0+
+                Speaking.
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Làm quen với các chủ đề thường gặp trong Part 1, 2 và 3 của phần
+                thi IELTS Speaking với hơn 200 bài samples mẫu từ cựu giám khảo
+                IELTS và giáo viên chuyên môn cao (Mitchell Mckee).
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Luyện tập phát âm và thực hành luyện nói theo phương pháp
+                shadowing.
+              </li>
+              <li class="detail-list-item">
+                <mat-icon class="icon-check-circle">check_circle</mat-icon>
+                Cải thiện vượt bậc vốn từ vựng, ngữ pháp, và cách xây dựng cấu
+                trúc câu trả lời IELTS Speaking với các dạng bài tập phong phú
+                đa dạng.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

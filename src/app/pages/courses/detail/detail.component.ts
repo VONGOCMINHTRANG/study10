@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CoursesComponent } from '../courses.component';
 
 @Component({
@@ -8,6 +8,9 @@ import { CoursesComponent } from '../courses.component';
 })
 export class DetailComponent {
   activeNavItem: string = 'objective-course';
+  @ViewChild('objectiveRef') objectiveRef!: ElementRef;
+  @ViewChild('informationRef') informationRef!: ElementRef;
+  @ViewChild('curriculumRef') curriculumRef!: ElementRef;
 
   constructor(private coursesComponent: CoursesComponent) {}
 
@@ -17,5 +20,28 @@ export class DetailComponent {
 
   handleNavActive(item: string) {
     this.activeNavItem = item;
+
+    switch (item) {
+      case 'objective-course':
+        this.objectiveRef.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+        break;
+
+      case 'course-information':
+        this.informationRef.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+        break;
+
+      case 'curriculum':
+        this.curriculumRef.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+        break;
+
+      default:
+        break;
+    }
   }
 }
